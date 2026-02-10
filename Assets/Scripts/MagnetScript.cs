@@ -106,6 +106,10 @@ public class MagnetScript : MonoBehaviour
             LogicScript.decreaseTime(10); // decrease time by 10 seconds 
             returnStart = true;
             returnToStart();
+            float timeLeft = LogicScript.getTimeLeftSeconds();
+            if (timeLeft <= 10) {
+                LogicScript.decreaseTime((int) timeLeft);
+            }
         }
         else if (collision.gameObject.tag == "Trash")
         {

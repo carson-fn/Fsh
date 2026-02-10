@@ -32,6 +32,10 @@ public class LogicScript : MonoBehaviour
     {
         score += points;
     }
+    public static float getTimeLeftSeconds()
+    {
+        return timeLeftSeconds;
+    }
 
     void Start()
     {
@@ -49,8 +53,9 @@ public class LogicScript : MonoBehaviour
     {
         elapsedTime += Time.deltaTime; // how mcuh time elapses between each frame !!!
         timeLeftSeconds = startTimeSeconds - elapsedTime;
-        if (timeLeftSeconds <= 1)
+        if (timeLeftSeconds <= 0)
         {
+            timeLeftSeconds = 0;
             gameOver = true;
         }
     }
@@ -71,10 +76,10 @@ public class LogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        displayTime();
+        displayScore();
         if (!gameOver)
         {
-            displayTime();
-            displayScore();
             countdownTimer();
         }
         else
