@@ -1,0 +1,89 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
+using UnityEditorInternal;
+
+public class LogicScript : MonoBehaviour
+{
+    private static float elapsedTime;
+    [SerializeField] private static float startTimeSeconds = 60;
+    private static float timeLeftSeconds;
+
+    [SerializeField] private static bool gameOver = false;
+
+    [SerializeField] private TextMeshProUGUI timerText;   
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    private CatScript CatInstance;
+    private MagnetScript MagnetInstance;
+
+    [SerializeField] private static int score = 0;
+
+    private static LogicScript Instance;
+
+    public static void decreaseTime(int seconds)
+    {
+        elapsedTime += seconds; 
+    }
+    public static void increaseScore(int points)
+    {
+        score += points;
+    }
+
+    void Start()
+    {
+        Instance = this;
+        CatInstance = CatScript.getInstance();
+        MagnetInstance = MagnetScript.getInstance();
+    }
+
+    public static LogicScript getInstance()
+    {
+        return Instance;
+    }
+
+    private void countdownTimer()
+    {
+        elapsedTime += Time.deltaTime; // how mcuh time elapses between each frame !!!
+        timeLeftSeconds = startTimeSeconds - elapsedTime;
+        if (timeLeftSeconds <= 1)
+        {
+            gameOver = true;
+        }
+    }
+    private void displayScore()
+    {
+        scoreText.text = score.ToString();
+    }
+
+    private void displayTime()
+    {
+        int minutes = Mathf.FloorToInt(timeLeftSeconds / 60);
+        int seconds = Mathf.FloorToInt(timeLeftSeconds % 60);
+        //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerText.text = $"{minutes}:{seconds:00}";
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!gameOver)
+        {
+            displayTime();
+            displayScore();
+            countdownTimer();
+        }
+        else
+        {
+            // display game over scene ?? 
+            Debug.Log("GAME OVER\n");
+        }
+        
+
+        
+    }
+}
