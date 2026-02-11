@@ -10,10 +10,13 @@ public class TrashSpawnerScript : MonoBehaviour
     [SerializeField] private float lowestPointX = -6.5f;
     [SerializeField] private float highestPointX = 6.5f;
     [SerializeField] private float spawnRate = 2;
+
+    private int level;
     private float timer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        level = LogicScript.getLevel(); // not rly doing anything w this for now ... 
         
     }
 

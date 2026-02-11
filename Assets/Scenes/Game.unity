@@ -382,6 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   myRigidBody: {fileID: 0}
+  leftOutOfBoundX: -8
+  rightOutOfBoundX: 14
 --- !u!1 &485999949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1004,7 @@ Transform:
   m_GameObject: {fileID: 1430238820}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.52, y: -4.06, z: 0.06309495}
+  m_LocalPosition: {x: 10.17, y: 2.29, z: 0.06309495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1390,7 +1392,7 @@ Transform:
   m_GameObject: {fileID: 1851514104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21748495, y: -0.6653712, z: -9.970797}
+  m_LocalPosition: {x: -0.3, y: -0.6653712, z: -9.970797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

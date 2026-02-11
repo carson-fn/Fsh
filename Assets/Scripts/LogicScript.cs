@@ -6,8 +6,16 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 
+enum LEVELS {
+    LEVEL0 = 0,
+    LEVEL1,
+    LEVEL2,
+    LEVEL3,
+    LEVEL4
+}
 public class LogicScript : MonoBehaviour
 {
+    private static int level;
     private static float elapsedTime;
     [SerializeField] private static float startTimeSeconds = 60;
     private static float timeLeftSeconds;
@@ -42,6 +50,15 @@ public class LogicScript : MonoBehaviour
         Instance = this;
         CatInstance = CatScript.getInstance();
         MagnetInstance = MagnetScript.getInstance();
+    }
+
+    public static void setLevel(int lvl)
+    {
+        level = lvl;
+    }
+    public static int getLevel()
+    {
+        return level;
     }
 
     public static LogicScript getInstance()

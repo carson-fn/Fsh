@@ -1,3 +1,4 @@
+//using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,9 @@ public class CatScript : MonoBehaviour
     [SerializeField] private float movementSpeed = 3f;
     public Rigidbody2D myRigidBody;
     private Vector2 movementDirection;
+
+    [SerializeField] private float leftOutOfBoundX;
+    [SerializeField] private float rightOutOfBoundX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +21,8 @@ public class CatScript : MonoBehaviour
         fishing = false;
         gameObject.name = "cattt";
         myRigidBody = GetComponent<Rigidbody2D>();
+        leftOutOfBoundX = CharacterScript.getLeftOutOfBoundX();
+        rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
     }
 
@@ -47,6 +53,19 @@ public class CatScript : MonoBehaviour
         //     movementDirection = new Vector2(0, 0);
            
         // }
+
+        if((transform.position.x < leftOutOfBoundX) && (myRigidBody.linearVelocityX < 0))
+        {
+            transform.position = new Vector3(rightOutOfBoundX, transform.position.y, transform.position.z);
+            Debug.Log("OUT OF BOUNDS ON LEFT\n");
+            movementDirection = new Vector2(-1, 0);
+        }
+        else if((transform.position.x > rightOutOfBoundX) && (myRigidBody.linearVelocityX > 0))
+        {
+            Debug.Log("OUT OF BOUNDS ON RIGHT\n");
+            transform.position = new Vector3(leftOutOfBoundX, transform.position.y, transform.position.z);
+            movementDirection = new Vector2(1, 0);
+        }
         myRigidBody.linearVelocity = movementDirection * movementSpeed;
 
     }

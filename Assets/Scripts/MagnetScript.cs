@@ -5,16 +5,17 @@ using UnityEngine.InputSystem;
 
 public class MagnetScript : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 3f;
+    [SerializeField] private float movementSpeed = 3.5f;
     public Rigidbody2D myRigidBody;
     private Vector2 movementDirection;
-    [SerializeField] private float localStartPositionX = 1.55f;
+    [SerializeField] private float localStartPositionX = 1.5f;
 
     // 1.4f
     [SerializeField] private float localStartPositionY = 1.5f;
     //-1.313f;
 
     [SerializeField] private float lowestPosition = -3.5f;
+    
 
     private bool fishing = false;
 
@@ -23,6 +24,9 @@ public class MagnetScript : MonoBehaviour
     private static MagnetScript Instance;
 
     private static LogicScript LogicInstance;
+
+    [SerializeField] private float leftOutOfBoundX;
+    [SerializeField] private float rightOutOfBoundX;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +36,8 @@ public class MagnetScript : MonoBehaviour
         // localStartPositionY = Instance.transform.localPosition.y;
         LogicInstance = LogicScript.getInstance();
         myRigidBody = GetComponent<Rigidbody2D>();
+        leftOutOfBoundX = CharacterScript.getLeftOutOfBoundX();
+        rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
     }
 
@@ -48,19 +54,29 @@ public class MagnetScript : MonoBehaviour
     void Update()
     {
         
-        if (Keyboard.current.aKey.isPressed && !fishing)
-        {
-            movementDirection = new Vector2(-1, 0);
-        }
+        // if (Keyboard.current.aKey.isPressed && !fishing)
+        // {
+        //     movementDirection = new Vector2(-1, 0);
+        // }
+        
 
-        else if (Keyboard.current.dKey.isPressed && !fishing)
-        {
-            movementDirection = new Vector2(1, 0);
-        }
-        else if (Keyboard.current.fKey.isPressed && !fishing)
+        // else if (Keyboard.current.dKey.isPressed && !fishing)
+        // {
+        //     movementDirection = new Vector2(1, 0);
+        // }
+        if (Keyboard.current.fKey.isPressed && !fishing)
         {
             fishing = true;
             movementDirection = new Vector2(0, -1);
+        }
+        else if (!fishing)
+        {
+            float PlayerPositionX = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.x;
+        float PlayerPositionY = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.y;
+            transform.position = new Vector3(PlayerPositionX + localStartPositionX, 
+            PlayerPositionY - localStartPositionY, 
+            transform.position.z);
+            
         }
 
         if (myRigidBody.linearVelocityY > 0)
@@ -70,6 +86,7 @@ public class MagnetScript : MonoBehaviour
                 movementDirection = new Vector2(0, 0);
                 fishing = false;
                 returnStart = false;
+                Debug.Log("MAGNET RETURNED TO STARTING POSTION\n");
             }
         }
  
@@ -92,6 +109,19 @@ public class MagnetScript : MonoBehaviour
             // }
         }
         myRigidBody.linearVelocity = movementDirection * movementSpeed;
+
+        if((transform.position.x < leftOutOfBoundX) && (myRigidBody.linearVelocityX < 0))
+        {
+            transform.position = new Vector3(rightOutOfBoundX, transform.position.y, transform.position.z);
+            Debug.Log("OUT OF BOUNDS ON LEFT\n");
+            movementDirection = new Vector2(-1, 0);
+        }
+        else if((transform.position.x > rightOutOfBoundX) && (myRigidBody.linearVelocityX > 0))
+        {
+            Debug.Log("OUT OF BOUNDS ON RIGHT\n");
+            transform.position = new Vector3(leftOutOfBoundX, transform.position.y, transform.position.z);
+            movementDirection = new Vector2(1, 0);
+        }
         
     }
     void FixedUpdate()
@@ -128,7 +158,8 @@ public class MagnetScript : MonoBehaviour
         float PlayerPositionX = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.x;
         float PlayerPositionY = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.y;
         //Debug.Log(" GOT PLAYER POSITION\n");
-        movementDirection = new Vector2((PlayerPositionX + localStartPositionX - transform.position.x)/movementSpeed, (PlayerPositionY + localStartPositionY - transform.position.y)/movementSpeed);
+        movementDirection = new Vector2((PlayerPositionX + localStartPositionX - transform.position.x)/movementSpeed, 
+        (PlayerPositionY + localStartPositionY - transform.position.y)/movementSpeed);
 
         //movementDirection = new Vector2((1.4f - transform.localPosition.x)/movementSpeed, (-1.3f - transform.localPosition.y)/movementSpeed);
     }
