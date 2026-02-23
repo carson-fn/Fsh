@@ -8,6 +8,8 @@ TagManager:
   - CatPlayer
   - Magnet
   - Trash
+  - GameOverScreen
+  - FinalScoreText
   layers:
   - Default
   - TransparentFX

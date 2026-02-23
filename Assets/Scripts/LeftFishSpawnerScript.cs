@@ -10,7 +10,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     [SerializeField] private float avgSpawnRate;
     private float timer = 0;
     [SerializeField] private float lowestPoint = -3.4f;
-    [SerializeField] private float highestPoint = 0.0f;
+    [SerializeField] private float highestPoint = -1.0f;
 
     private int level;
     
@@ -30,17 +30,23 @@ public class LeftFishSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            spawnLeftFish();
-            timer = 0;
-            spawnRate = Random.Range(avgSpawnRate - 1, avgSpawnRate + 1);
-        }
 
+        if (!(LogicScript.getDead()))
+        {
+            if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                spawnLeftFish();
+                timer = 0;
+                spawnRate = Random.Range(avgSpawnRate - 1, avgSpawnRate + 1);
+            }
+
+            
+        }
+        
         
     }
     void spawnLeftFish()

@@ -6,7 +6,7 @@ public class TrashSpawnerScript : MonoBehaviour
     public GameObject Trash1;
 
     [SerializeField] private float lowestPointY = -4f;
-    [SerializeField] private float highestPointY = 0.5f;
+    [SerializeField] private float highestPointY = 0.0f;
     [SerializeField] private float lowestPointX = -6.5f;
     [SerializeField] private float highestPointX = 6.5f;
     [SerializeField] private float spawnRate = 2;
@@ -23,16 +23,21 @@ public class TrashSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
+        if (!(LogicScript.getDead()))
         {
-            timer += Time.deltaTime;
+             if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                spawnTrash();
+                timer = 0;
+                spawnRate = Random.Range(3, 6);
+            }
+            
         }
-        else
-        {
-            spawnTrash();
-            timer = 0;
-            spawnRate = Random.Range(3, 6);
-        }
+       
         
     }
 

@@ -20,13 +20,15 @@ public class LogicScript : MonoBehaviour
     [SerializeField] private static float startTimeSeconds = 60;
     private static float timeLeftSeconds;
 
-    [SerializeField] private static bool gameOver = false;
+    [SerializeField] private static bool dead = false;
 
     [SerializeField] private TextMeshProUGUI timerText;   
     [SerializeField] private TextMeshProUGUI scoreText;
 
     private CatScript CatInstance;
     private MagnetScript MagnetInstance;
+
+    [SerializeField] private GameObject GameOverUI;
 
     [SerializeField] private static int score = 0;
 
@@ -40,6 +42,10 @@ public class LogicScript : MonoBehaviour
     {
         score += points;
     }
+    public static int getScore()
+    {
+        return score;
+    }
     public static float getTimeLeftSeconds()
     {
         return timeLeftSeconds;
@@ -50,6 +56,7 @@ public class LogicScript : MonoBehaviour
         Instance = this;
         CatInstance = CatScript.getInstance();
         MagnetInstance = MagnetScript.getInstance();
+        GameOverUI.SetActive(false);
     }
 
     public static void setLevel(int lvl)
@@ -59,6 +66,11 @@ public class LogicScript : MonoBehaviour
     public static int getLevel()
     {
         return level;
+    }
+
+    public static bool getDead()
+    {
+        return dead;
     }
 
     public static LogicScript getInstance()
@@ -73,7 +85,8 @@ public class LogicScript : MonoBehaviour
         if (timeLeftSeconds <= 0)
         {
             timeLeftSeconds = 0;
-            gameOver = true;
+            dead = true;
+            //gameOver();
         }
     }
     private void displayScore()
@@ -95,7 +108,7 @@ public class LogicScript : MonoBehaviour
     {
         displayTime();
         displayScore();
-        if (!gameOver)
+        if (!dead)
         {
             countdownTimer();
         }
