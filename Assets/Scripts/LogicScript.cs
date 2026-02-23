@@ -17,7 +17,7 @@ public class LogicScript : MonoBehaviour
 {
     private static int level;
     private static float elapsedTime;
-    [SerializeField] private static float startTimeSeconds = 60;
+    [SerializeField] private static float startTimeSeconds = 60f;
     private static float timeLeftSeconds;
 
     [SerializeField] private static bool dead = false;
@@ -28,12 +28,14 @@ public class LogicScript : MonoBehaviour
     private CatScript CatInstance;
     private MagnetScript MagnetInstance;
 
-    [SerializeField] private GameObject GameOverUI;
-
     [SerializeField] private static int score = 0;
 
     private static LogicScript Instance;
 
+    public static void setScore(int s)
+    {
+        score = s;
+    }
     public static void decreaseTime(int seconds)
     {
         elapsedTime += seconds; 
@@ -56,12 +58,15 @@ public class LogicScript : MonoBehaviour
         Instance = this;
         CatInstance = CatScript.getInstance();
         MagnetInstance = MagnetScript.getInstance();
-        GameOverUI.SetActive(false);
     }
 
     public static void setLevel(int lvl)
     {
         level = lvl;
+    }
+    public static void setDead(bool d)
+    {
+        dead = d;
     }
     public static int getLevel()
     {
@@ -86,8 +91,13 @@ public class LogicScript : MonoBehaviour
         {
             timeLeftSeconds = 0;
             dead = true;
-            //gameOver();
         }
+    }
+
+    public static void resetTimer(float time)
+    {
+        elapsedTime = 0;
+        timeLeftSeconds = time;
     }
     private void displayScore()
     {
@@ -106,14 +116,15 @@ public class LogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayTime();
-        displayScore();
         if (!dead)
         {
+            displayTime();
+            displayScore();
             countdownTimer();
         }
         else
         {
+            GameOverLogicScript.gameOver();
             // display game over scene ?? 
             Debug.Log("GAME OVER\n");
         }

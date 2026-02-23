@@ -784,7 +784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818207013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130676903}
+        m_TargetAssemblyTypeName: GameOverLogicScript, Assembly-CSharp
+        m_MethodName: restartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &818207013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,7 +2177,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1607893478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130676903}
+        m_TargetAssemblyTypeName: GameOverLogicScript, Assembly-CSharp
+        m_MethodName: nextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1607893478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,6 +2291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftFish1: {fileID: 3027437571517745766, guid: aaa1a808abffd43e9bb42cbcc3593523, type: 3}
   leftFish2: {fileID: 6007294044898944556, guid: f1d151d818d9b48f28da9782295ecb16, type: 3}
+  leftFish3: {fileID: 7021036469452980094, guid: 0fa1480ef0a254a24ae777c4da4734cc, type: 3}
   fishes: []
   spawnRate: 2
   avgSpawnRate: 0
@@ -2417,7 +2442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1925434951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130676903}
+        m_TargetAssemblyTypeName: GameOverLogicScript, Assembly-CSharp
+        m_MethodName: goHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1925434951
 MonoBehaviour:
   m_ObjectHideFlags: 0

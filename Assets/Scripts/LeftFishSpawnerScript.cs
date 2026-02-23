@@ -5,6 +5,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
 {
     public GameObject leftFish1;
     public GameObject leftFish2;
+    public GameObject leftFish3;
     public List<GameObject> fishes;
     [SerializeField] private float spawnRate = 2;
     [SerializeField] private float avgSpawnRate;
@@ -19,11 +20,12 @@ public class LeftFishSpawnerScript : MonoBehaviour
     {
         fishes.Add(leftFish1);
         fishes.Add(leftFish2);
+        fishes.Add(leftFish3);
         Debug.Log("ADDED FISHES");
         Debug.Log(fishes.Count);
         spawnLeftFish();
         level = LogicScript.getLevel();
-        avgSpawnRate = 10 - level; // just for now, we can make better later
+        avgSpawnRate = 14 - (level * level); // just for now, we can make better later
         // bc spawn rate atm is like how much time between spawn, not fish per time 
     }
 
@@ -51,7 +53,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     }
     void spawnLeftFish()
     {
-        int fishSpawnIndex = Random.Range(0, fishes.Count); 
+        int fishSpawnIndex = Random.Range(0, level); 
         
         Instantiate(fishes[fishSpawnIndex], 
         new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), transform.position.z), 

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MagnetScript : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 3.5f;
+    [SerializeField] private float movementSpeed = 4.5f;
     public Rigidbody2D myRigidBody;
     private Vector2 movementDirection;
     [SerializeField] private float localStartPositionX = 1.5f;

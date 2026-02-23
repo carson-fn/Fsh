@@ -4,16 +4,12 @@ using UnityEngine.SceneManagement;
 public class LevelScreenLogic : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void goToLevel1()
+    public void goToLevel(int lvl)
     {
         SceneManager.LoadScene("Game");
-        LogicScript.setLevel(1);
+        LogicScript.setLevel(lvl);
     }
-    public void goToLevel2()
-    {
-        SceneManager.LoadScene("Game");
-        LogicScript.setLevel(5); // to test fishies for now 
-    }
+
     
     // void Start()
     // {
