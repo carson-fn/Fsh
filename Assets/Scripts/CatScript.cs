@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 public class CatScript : MonoBehaviour
 {
     private static CatScript Instance;
+
+    public static Sprite buddyLiam;
+    public static Sprite buddyHarold;
+    public static Sprite buddyCarson;
     
     private bool fishing;
     [SerializeField] private float movementSpeed = 3f;

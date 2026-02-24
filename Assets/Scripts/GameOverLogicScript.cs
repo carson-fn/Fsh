@@ -14,7 +14,7 @@ public class GameOverLogicScript : MonoBehaviour
     void Start()
     {
        GameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
-       //finalScoreText = GameObject.FindGameObjectWithTag("finalScoreText");
+       //finalScoreText = GameObject.FindGameObjectWithTag("FinalScoreText");
 
        GameOverScreen.SetActive(false); 
     }

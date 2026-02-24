@@ -6,7 +6,11 @@ using UnityEngine.InputSystem;
 public class MagnetScript : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 4.5f;
-    public Rigidbody2D myRigidBody;
+    [SerializeField] private Rigidbody2D myRigidBody;
+
+    [SerializeField] private SpriteRenderer mySpriteRenderer;
+
+    public Sprite jellyfishSprite;
     private Vector2 movementDirection;
     [SerializeField] private float localStartPositionX = 1.5f;
 
@@ -36,6 +40,7 @@ public class MagnetScript : MonoBehaviour
         // localStartPositionY = Instance.transform.localPosition.y;
         LogicInstance = LogicScript.getInstance();
         myRigidBody = GetComponent<Rigidbody2D>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         leftOutOfBoundX = CharacterScript.getLeftOutOfBoundX();
         rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
@@ -140,6 +145,9 @@ public class MagnetScript : MonoBehaviour
             if (timeLeft <= 10) {
                 LogicScript.decreaseTime((int) timeLeft);
             }
+            // TESTING STUFF 
+            mySpriteRenderer.sprite = jellyfishSprite;
+            
         }
         else if (collision.gameObject.tag == "Trash")
         {
