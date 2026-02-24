@@ -374,7 +374,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -5
   m_Sprite: {fileID: 8887921622105894857, guid: c0028f52efa194103b4dbb163aae15c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -688,7 +688,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: -7975506639966547020, guid: a5a1b57c3ae0d4dfeb45fec33f744e94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2396,6 +2396,7 @@ MonoBehaviour:
   leftFish1: {fileID: 3027437571517745766, guid: aaa1a808abffd43e9bb42cbcc3593523, type: 3}
   leftFish2: {fileID: 6007294044898944556, guid: f1d151d818d9b48f28da9782295ecb16, type: 3}
   leftFish3: {fileID: 7021036469452980094, guid: 0fa1480ef0a254a24ae777c4da4734cc, type: 3}
+  leftFish4: {fileID: 8268624566302536213, guid: fff262f13d1714f92af25521a368a7f6, type: 3}
   fishes: []
   spawnRate: 2
   avgSpawnRate: 0

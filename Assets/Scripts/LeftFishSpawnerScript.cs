@@ -6,6 +6,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     public GameObject leftFish1;
     public GameObject leftFish2;
     public GameObject leftFish3;
+    public GameObject leftFish4;
     public List<GameObject> fishes;
     [SerializeField] private float spawnRate = 2;
     [SerializeField] private float avgSpawnRate;
@@ -21,6 +22,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
         fishes.Add(leftFish1);
         fishes.Add(leftFish2);
         fishes.Add(leftFish3);
+        fishes.Add(leftFish4);
         Debug.Log("ADDED FISHES");
         Debug.Log(fishes.Count);
         spawnLeftFish();
@@ -53,7 +55,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     }
     void spawnLeftFish()
     {
-        int fishSpawnIndex = Random.Range(0, level); 
+        int fishSpawnIndex = Random.Range(0, (level + 1)); 
         
         Instantiate(fishes[fishSpawnIndex], 
         new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), transform.position.z), 
