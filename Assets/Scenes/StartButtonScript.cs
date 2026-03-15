@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class StartButtonScript : MonoBehaviour
 {
-    public void LoadScene2()
+    public void LoadLoadingScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Loading");
     }
 }
 
