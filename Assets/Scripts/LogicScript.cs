@@ -27,7 +27,7 @@ public class LogicScript : MonoBehaviour
 
     private CatScript CatInstance;
     private MagnetScript MagnetInstance;
-
+    private GameOverLogicScript GameOverLogicInstance;
     [SerializeField] private static int score = 0;
 
     private static LogicScript Instance;
@@ -58,6 +58,7 @@ public class LogicScript : MonoBehaviour
         Instance = this;
         CatInstance = CatScript.getInstance();
         MagnetInstance = MagnetScript.getInstance();
+        GameOverLogicInstance = GameOverLogicScript.getInstance();
     }
 
     public static void setLevel(int lvl)
@@ -124,7 +125,7 @@ public class LogicScript : MonoBehaviour
         }
         else
         {
-            GameOverLogicScript.gameOver();
+            GameOverLogicInstance.gameOver();
             // display game over scene ?? 
             Debug.Log("GAME OVER\n");
         }

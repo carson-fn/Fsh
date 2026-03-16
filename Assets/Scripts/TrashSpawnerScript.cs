@@ -4,6 +4,8 @@ using UnityEngine;
 public class TrashSpawnerScript : MonoBehaviour
 {
     public GameObject Trash1;
+    private static int totalNumTrash = 0;
+    private static int numTrashCollected = 0;
 
     [SerializeField] private float lowestPointY = -4f;
     [SerializeField] private float highestPointY = 0.0f;
@@ -18,6 +20,18 @@ public class TrashSpawnerScript : MonoBehaviour
     {
         level = LogicScript.getLevel(); // not rly doing anything w this for now ... 
         
+    }
+    public static int getTotalNumTrash()
+    {
+        return totalNumTrash;
+    }
+    public static int getNumTrashCollected()
+    {
+        return numTrashCollected;
+    }
+    public static void increaseNumTrashCollected(int num)
+    {
+        numTrashCollected += num;
     }
 
     // Update is called once per frame
@@ -43,7 +57,7 @@ public class TrashSpawnerScript : MonoBehaviour
 
     void spawnTrash()
     {
-        
+        totalNumTrash++;
         Instantiate(Trash1, 
         new Vector3(Random.Range(lowestPointX, highestPointX), 
         Random.Range(lowestPointY, highestPointY), transform.position.z), 

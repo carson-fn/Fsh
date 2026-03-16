@@ -12,7 +12,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     [SerializeField] private float avgSpawnRate;
     private float timer = 0;
     [SerializeField] private float lowestPoint = -3.4f;
-    [SerializeField] private float highestPoint = -1.0f;
+    [SerializeField] private float highestPoint = -1.5f;
 
     private int level;
     
