@@ -12,6 +12,7 @@ public class GameOverLogicScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static GameObject GameOverScreen;
+    public GameObject nextButton;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
     private static GameOverLogicScript Instance;
@@ -77,7 +78,7 @@ public class GameOverLogicScript : MonoBehaviour
         // if its at last level, disable the next button!!
         if(LogicScript.getLevel() >= 3) 
         {
-            GameObject nextButton = GameObject.FindGameObjectWithTag("NextButton");
+            // GameObject nextButton = GameObject.FindGameObjectWithTag("NextButton");
             nextButton.SetActive(false);
         }
         Debug.Log("IN GAME OVER SCREEN DISPLAYED \n");
