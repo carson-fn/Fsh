@@ -40,4 +40,27 @@ public class AuthManager : MonoBehaviour
             feedbackText.text = message;
         }
     }
+
+    public async void LoginUser()
+    {
+        string email = emailInput.text;
+        string password = passwordInput.text;
+        string message = null;
+
+        try
+        {
+            var response = await supabase.Auth.SignIn(email, password);
+            Debug.Log("User logged in: " + response.User.Email);
+        }
+        catch (Exception e)
+        {
+            message = "Login failed: " + e.Message;
+            Debug.LogError(message);
+        }
+
+        if (feedbackText != null && message != null)
+        {
+            feedbackText.text = message;
+        }
+    }
 }
