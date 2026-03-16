@@ -25,6 +25,8 @@ public class TileColliderMapper : MonoBehaviour
             Vector3Int cell = tilemap.WorldToCell(col.transform.position);
 
             colliderToCell[col] = cell;
+
+            Debug.Log("Collider added!");
         }
     }
 
