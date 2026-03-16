@@ -69,20 +69,33 @@ public class MagnetScript : MonoBehaviour
         // {
         //     movementDirection = new Vector2(1, 0);
         // }
-        if (Keyboard.current.fKey.isPressed && !fishing)
+        if(!(LogicScript.getDead()))
         {
-            fishing = true;
-            movementDirection = new Vector2(0, -1);
+            if (Keyboard.current.sKey.isPressed)
+            {
+                fishing = true;
+                returnStart = false;
+                movementDirection = new Vector2(0, -1);
+            }
+            if (Keyboard.current.wKey.isPressed)
+            {
+                //fishing = true;
+                movementDirection = new Vector2(0, 1);
+            }
+
+            else if (!fishing)
+            {
+                float PlayerPositionX = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.x;
+                float PlayerPositionY = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.y;
+                transform.position = new Vector3(PlayerPositionX + localStartPositionX, 
+                PlayerPositionY - localStartPositionY, 
+                transform.position.z);
+                
+            }
+                
         }
-        else if (!fishing)
-        {
-            float PlayerPositionX = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.x;
-        float PlayerPositionY = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.y;
-            transform.position = new Vector3(PlayerPositionX + localStartPositionX, 
-            PlayerPositionY - localStartPositionY, 
-            transform.position.z);
-            
-        }
+       
+        
 
         if (myRigidBody.linearVelocityY > 0)
         {
@@ -146,11 +159,12 @@ public class MagnetScript : MonoBehaviour
                 LogicScript.decreaseTime((int) timeLeft);
             }
             // TESTING STUFF 
-            mySpriteRenderer.sprite = jellyfishSprite;
+            //mySpriteRenderer.sprite = jellyfishSprite;
             
         }
         else if (collision.gameObject.tag == "Trash")
         {
+            TrashSpawnerScript.increaseNumTrashCollected(1);
             Debug.Log("fish hit trash\n");
         }
         else

@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
+
 
 
 
@@ -9,14 +12,24 @@ public class GameOverLogicScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static GameObject GameOverScreen;
-    [SerializeField] private static TextMeshProUGUI finalScoreText;
+    [SerializeField] private TextMeshProUGUI finalScoreText;
+
+    private static GameOverLogicScript Instance;
  
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
        GameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
-       //finalScoreText = GameObject.FindGameObjectWithTag("FinalScoreText");
-
+       //finalScoreText = TextMeshPro.FindGameObjectWithTag("FinalScoreText");
+        //Instance = this;
        GameOverScreen.SetActive(false); 
+    }
+    public static GameOverLogicScript getInstance()
+    {
+        return Instance;
     }
 
     private void resetGame()
@@ -58,16 +71,41 @@ public class GameOverLogicScript : MonoBehaviour
         resetGame();
     }
 
-    public static void gameOver()
+    public void gameOver()
     {
         GameOverScreen.SetActive(true);
+        // if its at last level, disable the next button!!
+        if(LogicScript.getLevel() >= 3) 
+        {
+            GameObject nextButton = GameObject.FindGameObjectWithTag("NextButton");
+            nextButton.SetActive(false);
+        }
+        Debug.Log("IN GAME OVER SCREEN DISPLAYED \n");
         finalScoreText.text = $"Score: {LogicScript.getScore()}";
+        Debug.Log("SCORE DISPLAYED\n");
+
+        float percentTrashCollected = (float) TrashSpawnerScript.getNumTrashCollected() / TrashSpawnerScript.getTotalNumTrash();
+        // try displaying the stars one at a time idk ... need to implememnt still 
+        Debug.Log($"percent trash collected: {percentTrashCollected}\n");
+        if (percentTrashCollected >= 0.5)
+        {
+            Debug.Log("1 STAR\n");
+        }
+        if (percentTrashCollected >= 0.75)
+        {
+            Debug.Log("2 STAR\n");
+        }
+        if (percentTrashCollected >= 0.92)
+        {
+            Debug.Log("3 STAR\n");
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LogicScript.getDead())
+        if (LogicScript.getDead() && !GameOverScreen.activeSelf)
         {
             gameOver();
         }
