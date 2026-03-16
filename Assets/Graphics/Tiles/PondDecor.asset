@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: map_lake_0
+  m_Script: {fileID: 11500000, guid: db2294d817c99dd43b747b158ce789ae, type: 3}
+  m_Name: PondDecor
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 5856316230329784871, guid: 1b4521abe29748f46b3881f54d258499, type: 3}
+  m_Sprite: {fileID: -3690594204951815769, guid: aeca99184a290a54a813153904df08f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,3 +34,4 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  biomeName: pond

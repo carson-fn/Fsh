@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: bg_ocean
+  m_Name: OceanBackground
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: 4305895413979539592, guid: 5cbf18304abb74440a67ac79d7f8d197, type: 3}
