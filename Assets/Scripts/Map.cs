@@ -43,14 +43,16 @@ public class Map : MonoBehaviour
         {
             Debug.Log("Clicked collider: " + hit.name);
 
-            // If you want to get the tilemap and tile:
-            var tilemap = hit.GetComponent<UnityEngine.Tilemaps.Tilemap>();
-            if (tilemap != null)
-            {
-                Vector3Int cell = tilemap.WorldToCell(mouseWorldPos);
-                var tile = tilemap.GetTile(cell);
+            var hitTilemap = hit.GetComponent<Tilemap>();
+            // NOTE: return hit collider's tilemap
 
-                Debug.Log("Clicked tile: " + tile);
+            if (hitTilemap != null)
+            {
+                Vector3Int hitCell = hitTilemap.WorldToCell(mouseWorldPos);
+                // NOTE: from hit tilemap's persp, take mouse world pos and convert to cell pos
+                var hitTile = tilemap.GetTile(hitCell);
+
+                Debug.Log("Clicked tile: " + hitTile);
             }
         }
 
