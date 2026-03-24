@@ -1,4 +1,5 @@
 # IDE / Editor generated
+.env
 .vscode/
 .vsconfig
 .idea/
