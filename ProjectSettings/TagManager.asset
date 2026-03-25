@@ -11,6 +11,9 @@ TagManager:
   - GameOverScreen
   - FinalScoreText
   - NextButton
+  - Star1
+  - Star2
+  - Star3
   layers:
   - Default
   - TransparentFX

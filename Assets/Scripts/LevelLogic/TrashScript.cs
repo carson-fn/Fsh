@@ -11,6 +11,10 @@ public class TrashScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (LogicScript.getDead())
+        {
+            Destroy(gameObject);
+        }
 
     }
     void OnCollisionEnter2D(Collision2D collision)

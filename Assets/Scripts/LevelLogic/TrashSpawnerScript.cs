@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class TrashSpawnerScript : MonoBehaviour
 {
-    public GameObject Trash1;
-    private static int totalNumTrash = 0;
+    [SerializeField] private GameObject Trash1;
+    [SerializeField] private GameObject Trash2;
+    [SerializeField] private GameObject Trash3;
+    [SerializeField] private GameObject Trash4;
+
+    private int NUM_TRASH_TYPES = 4;
+    private List<GameObject> trashList = new List<GameObject>();
+    private static int totalNumTrashSpawned = 0;
     private static int numTrashCollected = 0;
 
     [SerializeField] private float lowestPointY = -4f;
@@ -19,11 +25,15 @@ public class TrashSpawnerScript : MonoBehaviour
     void Start()
     {
         level = LogicScript.getLevel(); // not rly doing anything w this for now ... 
+        trashList.Add(Trash1);
+        trashList.Add(Trash2);
+        trashList.Add(Trash3);
+        trashList.Add(Trash4);
         
     }
-    public static int getTotalNumTrash()
+    public static int getTotalNumTrashSpawned()
     {
-        return totalNumTrash;
+        return totalNumTrashSpawned;
     }
     public static int getNumTrashCollected()
     {
@@ -57,10 +67,14 @@ public class TrashSpawnerScript : MonoBehaviour
 
     void spawnTrash()
     {
-        totalNumTrash++;
-        Instantiate(Trash1, 
+        totalNumTrashSpawned++;
+
+        int trashSpawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
+        Instantiate(trashList[trashSpawnIndex], 
         new Vector3(Random.Range(lowestPointX, highestPointX), 
         Random.Range(lowestPointY, highestPointY), transform.position.z), 
         transform.rotation);
     }
+
+    
 }

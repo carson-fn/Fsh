@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 
 
@@ -15,11 +16,29 @@ public class GameOverLogicScript : MonoBehaviour
     public GameObject nextButton;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
+    private float PERCENT_1STAR = 0.6f;
+    private float PERCENT_2STAR = 0.8f;
+    private float PERCENT_3STAR = 0.92f;
+
+    private float num_stars_achieved = 0; 
+
+    private List<GameObject> stars = new List<GameObject>();
     private static GameOverLogicScript Instance;
  
     void Awake()
     {
         Instance = this;
+        GameObject star1 = GameObject.FindGameObjectWithTag("Star1");
+        GameObject star2 = GameObject.FindGameObjectWithTag("Star2");
+        GameObject star3 = GameObject.FindGameObjectWithTag("Star3");
+        stars.Add(star1);
+        stars.Add(star2);
+        stars.Add(star3);
+        for (int i = 0; i < 3; i++)
+        {
+            stars[i].SetActive(false);
+        }
+        
     }
     void Start()
     {
@@ -72,6 +91,16 @@ public class GameOverLogicScript : MonoBehaviour
         resetGame();
     }
 
+    private void displayStars()
+    {
+        for(int i = 0; i < num_stars_achieved; i++)
+        {
+           stars[i].SetActive(true); 
+        }
+        
+
+    }
+
     public void gameOver()
     {
         GameOverScreen.SetActive(true);
@@ -85,21 +114,27 @@ public class GameOverLogicScript : MonoBehaviour
         finalScoreText.text = $"Score: {LogicScript.getScore()}";
         Debug.Log("SCORE DISPLAYED\n");
 
-        float percentTrashCollected = (float) TrashSpawnerScript.getNumTrashCollected() / TrashSpawnerScript.getTotalNumTrash();
+        float percentTrashCollected = (float) TrashSpawnerScript.getNumTrashCollected() / TrashSpawnerScript.getTotalNumTrashSpawned();
         // try displaying the stars one at a time idk ... need to implememnt still 
         Debug.Log($"percent trash collected: {percentTrashCollected}\n");
-        if (percentTrashCollected >= 0.5)
-        {
-            Debug.Log("1 STAR\n");
-        }
-        if (percentTrashCollected >= 0.75)
-        {
-            Debug.Log("2 STAR\n");
-        }
-        if (percentTrashCollected >= 0.92)
+        
+        if (percentTrashCollected >= PERCENT_3STAR)
         {
             Debug.Log("3 STAR\n");
+            num_stars_achieved = 3;
         }
+        else if (percentTrashCollected >= PERCENT_2STAR)
+        {
+            Debug.Log("2 STAR\n");
+            num_stars_achieved = 2;
+        }
+        else if (percentTrashCollected >= PERCENT_1STAR)
+        {
+            Debug.Log("1 STAR\n");
+            num_stars_achieved = 1;
+        }
+        Debug.Log($"NUM STARS ACHIEVED: {num_stars_achieved}\n");
+        displayStars();
 
     }
 
