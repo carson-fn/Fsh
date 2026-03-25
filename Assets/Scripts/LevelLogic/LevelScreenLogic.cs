@@ -3,11 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelScreenLogic : MonoBehaviour
 {
+    private int BOSS_LVL = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void goToLevel(int lvl)
     {
-        SceneManager.LoadScene("Game");
+        Debug.Log($"PICKING LVL {lvl}\n\n");
         LogicScript.setLevel(lvl);
+        if(lvl == BOSS_LVL)
+        {
+            SceneManager.LoadScene("Biome1BossLvl");
+        }
+        else
+        {
+            SceneManager.LoadScene("Biome1GameLvl");
+        }
+        
     }
 
     

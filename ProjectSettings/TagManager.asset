@@ -14,6 +14,7 @@ TagManager:
   - Star1
   - Star2
   - Star3
+  - BossStartPanel
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,7 @@ public class GameOverLogicScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
     private float PERCENT_1STAR = 0.6f;
-    private float PERCENT_2STAR = 0.8f;
+    private float PERCENT_2STAR = 0.75f;
     private float PERCENT_3STAR = 0.92f;
 
     private float num_stars_achieved = 0; 
