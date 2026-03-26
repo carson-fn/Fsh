@@ -51,6 +51,9 @@ public class AuthManager : MonoBehaviour
         {
             var response = await supabase.Auth.SignIn(email, password);
             Debug.Log("User logged in: " + response.User.Email);
+
+            string userId = response.User.Id;
+            PlayerProfileManager.Instance.InitializeForUser(userId);
         }
         catch (Exception e)
         {
