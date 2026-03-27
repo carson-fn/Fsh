@@ -11,7 +11,7 @@ public class Map : MonoBehaviour
 
     // Biome Names, TODO: make this into an enum?
     private const string POND_NAME = "Pond";
-    private const string ARCTIC_NAME = "Lake"; // TODO: CHANGE THIS TO ARCTIC
+    private const string ARCTIC_NAME = "Arctic";
 
     // ------------------------------------------------------
 
