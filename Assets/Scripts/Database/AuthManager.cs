@@ -13,9 +13,23 @@ public class AuthManager : MonoBehaviour
     // Supabase connection as a singleton
     private Client supabase;
 
-    private async void Start()
+    private void SetFeedback(string message)
     {
-        supabase = await Database.GetClientAsync();
+        if (feedbackText != null)
+            feedbackText.text = message;
+    }
+   private async void Start()
+    {
+        try
+        {
+            supabase = await Database.GetClientAsync();
+            SetFeedback("Database connected.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Supabase init failed: " + e.Message);
+            SetFeedback("Database connection failed.");
+        }
     }
 
     public async void RegisterNewUser()
