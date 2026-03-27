@@ -36,8 +36,10 @@ public class LeftFishScript : MonoBehaviour
             currentScale.y * scaleMultiplier,
             currentScale.z);
 
-        // Apply the new scale to the transform
-        transform.localScale = newScale;
+            TrashSpawnerScript.decreaseNumTrashCollected(1); 
+            // additional penalty for hitting fish, since stars based off of % trash collected
+
+            transform.localScale = newScale;
             Invoke("DestroyFish", 2f); // calls the destroyfish func after 2 seconds
             
             

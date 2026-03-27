@@ -18,7 +18,7 @@ public class GameOverLogicScript : MonoBehaviour
     private float BOSS_LVL = -1;
     private float PERCENT_1STAR = 0.6f;
     private float PERCENT_2STAR = 0.75f;
-    private float PERCENT_3STAR = 0.92f;
+    private float PERCENT_3STAR = 0.88f;
 
     private int num_stars_achieved = 0; 
 

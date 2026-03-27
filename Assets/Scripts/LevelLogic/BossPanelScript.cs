@@ -30,7 +30,7 @@ public class BossPanelScript : MonoBehaviour
     {
         Debug.Log("BOSS PANEL START RUNNING");
         LeftFishSpawnerScript.setAvgSpawnRate(6);
-        TrashSpawnerScript.setAvgSpawnRate(1.5f);
+        TrashSpawnerScript.setAvgSpawnRate(1.8f);
 
         // BossEndScreen.SetActive(false);
         // BossStartScreen.SetActive(true);

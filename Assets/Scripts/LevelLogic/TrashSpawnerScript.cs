@@ -18,6 +18,8 @@ public class TrashSpawnerScript : MonoBehaviour
 
     private bool firstBossSpawn = false;
 
+    private int BOSS_SPAWN1_NUM_TRASH = 8;
+
     [SerializeField] private float lowestPointY = -4f;
     [SerializeField] private float highestPointY = 0.0f;
     [SerializeField] private float lowestPointX = -6.5f;
@@ -59,6 +61,10 @@ public class TrashSpawnerScript : MonoBehaviour
     {
         numTrashCollected += num;
     }
+    public static void decreaseNumTrashCollected(int num)
+    {
+        numTrashCollected -= num;
+    }
 
     // Update is called once per frame
     void Update()
@@ -88,7 +94,7 @@ public class TrashSpawnerScript : MonoBehaviour
         if (bossLvl && !firstBossSpawn)
         {
             firstBossSpawn = true;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < BOSS_SPAWN1_NUM_TRASH; i++)
             {
                 totalNumTrashSpawned++;
 
@@ -97,8 +103,8 @@ public class TrashSpawnerScript : MonoBehaviour
 
                 int spawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
                 Instantiate(trashList[spawnIndex], 
-                new Vector3(Random.Range(spawnX - 1, spawnX + 1), 
-                Random.Range(spawnY - 1, spawnY + 1), transform.position.z), 
+                new Vector3(Random.Range(spawnX - 0.5f, spawnX + 0.5f), 
+                Random.Range(spawnY - 0.5f, spawnY + 0.5f), transform.position.z), 
                 transform.rotation);
             }
             
