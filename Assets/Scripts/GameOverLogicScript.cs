@@ -33,6 +33,14 @@ public class GameOverLogicScript : MonoBehaviour
         return Instance;
     }
 
+    public int CalculateCoinsEarned(int score, float trashPercent)
+    {
+        float scorePart = score / 10f;
+        float trashMultiplier = 1f + (trashPercent / 100f);
+        int coinsEarned = Mathf.RoundToInt(scorePart * trashMultiplier);
+
+        return Mathf.Max(1, coinsEarned);
+    }
     private void resetGame()
     {
         LogicScript.setDead(false);
@@ -74,6 +82,8 @@ public class GameOverLogicScript : MonoBehaviour
 
     public void gameOver()
     {
+        
+
         GameOverScreen.SetActive(true);
         // if its at last level, disable the next button!!
         if(LogicScript.getLevel() >= 3) 
@@ -101,6 +111,8 @@ public class GameOverLogicScript : MonoBehaviour
             Debug.Log("3 STAR\n");
         }
 
+        int coinsEarned = CalculateCoinsEarned( LogicScript.getScore(), percentTrashCollected);
+        PlayerProfileManager.Instance.AddCoins(coinsEarned);
     }
 
     // Update is called once per frame

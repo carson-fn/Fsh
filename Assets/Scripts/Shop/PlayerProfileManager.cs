@@ -174,14 +174,12 @@ public class PlayerProfileManager : MonoBehaviour
         {
             case "none":
                 return true;
-            case "liam":
+            case "frog":
                 return CurrentProfile.highestLevelReached >= 3;
-            case "harold":
+            case "crab":
                 return CurrentProfile.highestLevelReached >= 6;
-            case "carson":
+            case "penguin":
                 return CurrentProfile.highestLevelReached >= 9;
-            case "garbage":
-                return CurrentProfile.highestLevelReached >= 12;
             default:
                 return false;
         }
@@ -191,14 +189,12 @@ public class PlayerProfileManager : MonoBehaviour
     {
         switch (buddyId)
         {
-            case "liam":
+            case "frog":
                 return 3;
-            case "harold":
+            case "crab":
                 return 6;
-            case "carson":
+            case "penguin":
                 return 9;
-            case "garbage":
-                return 12;
             default:
                 return 0;
         }
