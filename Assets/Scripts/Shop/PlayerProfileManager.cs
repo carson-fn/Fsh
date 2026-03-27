@@ -25,7 +25,21 @@ public class PlayerProfileManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        store = new LocalPlayerProfileStore();
+        if (store == null)
+        {
+            store = new LocalPlayerProfileStore();
+        }
+    }
+
+    public void SetStore(IPlayerProfileStore newStore)
+    {
+        if (newStore == null)
+        {
+            Debug.LogError("SetStore called with null store.");
+            return;
+        }
+
+        store = newStore;
     }
 
     public void InitializeForUser(string userId)
@@ -41,6 +55,7 @@ public class PlayerProfileManager : MonoBehaviour
         if (CurrentProfile == null)
         {
             CurrentProfile = CreateDefaultProfile(userId);
+            SaveProfile();
         }
 
         if (string.IsNullOrWhiteSpace(CurrentProfile.userId))
@@ -52,8 +67,6 @@ public class PlayerProfileManager : MonoBehaviour
         {
             CurrentProfile.equippedBuddy = "none";
         }
-
-        SaveProfile();
     }
 
     private PlayerProfileData CreateDefaultProfile(string userId)

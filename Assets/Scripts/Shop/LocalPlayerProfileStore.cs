@@ -2,34 +2,39 @@ using UnityEngine;
 
 public class LocalPlayerProfileStore : IPlayerProfileStore
 {
-    private const string Prefix = "player_profile_";
+    private string GetProfileKey(string userId)
+    {
+        return $"player_profile_{userId}";
+    }
 
     public PlayerProfileData LoadProfile(string userId)
     {
-        string key = Prefix + userId;
+        string key = GetProfileKey(userId);
 
         if (!PlayerPrefs.HasKey(key))
         {
-            return new PlayerProfileData
-            {
-                userId = userId,
-                coins = 0,
-                equippedBuddy = "none",
-                hookSpeedLevel = 0,
-                moveSpeedLevel = 0,
-            };
+            return null;
         }
 
         string json = PlayerPrefs.GetString(key);
+
+        if (string.IsNullOrWhiteSpace(json))
+        {
+            return null;
+        }
+
         return JsonUtility.FromJson<PlayerProfileData>(json);
     }
 
     public void SaveProfile(PlayerProfileData profile)
     {
         if (profile == null || string.IsNullOrWhiteSpace(profile.userId))
+        {
+            Debug.LogError("Tried to save an invalid profile.");
             return;
+        }
 
-        string key = Prefix + profile.userId;
+        string key = GetProfileKey(profile.userId);
         string json = JsonUtility.ToJson(profile);
 
         PlayerPrefs.SetString(key, json);

@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &38318417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &304453098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &493755207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1206,7 +1206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1061170112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1608,9 +1608,9 @@ MonoBehaviour:
   myRigidBody: {fileID: 0}
   mySpriteRenderer: {fileID: 1401803495}
   noBuddySprite: {fileID: 5440197706420605367, guid: 279142098994d4a94b0b061a5d907da9, type: 3}
-  liamBuddySprite: {fileID: -7975506639966547020, guid: a5a1b57c3ae0d4dfeb45fec33f744e94, type: 3}
-  haroldBuddySprite: {fileID: 4233779582481720852, guid: daa4710f521204323953dec55af9f8c5, type: 3}
-  carsonBuddySprite: {fileID: 5440197706420605367, guid: 279142098994d4a94b0b061a5d907da9, type: 3}
+  frogBuddySprite: {fileID: 0}
+  crabBuddySprite: {fileID: 0}
+  penguinBuddySprite: {fileID: 0}
   localStartPositionX: 1.5
   localStartPositionY: 1.5
   lowestPosition: -3.5
@@ -1668,7 +1668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1430238821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1469163804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2535,7 +2535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1704167184
 Transform:
   m_ObjectHideFlags: 0
@@ -2568,7 +2568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1779507012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1851514105
 Transform:
   m_ObjectHideFlags: 0
@@ -3014,6 +3014,10 @@ PrefabInstance:
     - target: {fileID: 1980203421076302457, guid: 19070e6870cd43f4c940c6cdfccd42b7, type: 3}
       propertyPath: m_Name
       value: ShopPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980203421076302457, guid: 19070e6870cd43f4c940c6cdfccd42b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3256476426019734803, guid: 19070e6870cd43f4c940c6cdfccd42b7, type: 3}
       propertyPath: m_hasFontAssetChanged
