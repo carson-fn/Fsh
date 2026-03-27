@@ -268,29 +268,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fsh is a 2D fishing game inspired by the United Nations Survival Development
+  m_text: "Fsh is a 2D fishing game inspired by the United Nations Survival Development
     Goal #14 - Life Below Water. We made this game to raise awareness about the marine
-    ecosystem and what we can do to reduce pollution.
-
-
-    The goals of the game
-    are:
-
-    - Try to protect marine life by clearing garbage
-
-    - Clear enough
-    garbage before the time runs out
-
-    - Avoid hitting fish with your hook!
-
-
-    We
-    hope you enjoy playing Fsh!
-
-'
+    ecosystem and what we can do to reduce pollution. \n\nThe goals of the game are:\n-
+    Try to protect marine life by clearing garbage\n- Clear enough garbage before
+    the time runs out\n- Avoid hitting fish with your hook!\n\nWe hope you enjoy
+    playing Fsh!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
-  m_sharedMaterial: {fileID: -6277434294152813106, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -909,7 +895,7 @@ MonoBehaviour:
   m_text: About Fsh
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
-  m_sharedMaterial: {fileID: -6277434294152813106, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1046,7 +1032,7 @@ MonoBehaviour:
   m_text: About
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
-  m_sharedMaterial: {fileID: -6277434294152813106, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
