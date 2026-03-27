@@ -18,8 +18,6 @@ public class TrashScript : MonoBehaviour
     }
 }
 
-using UnityEngine;
-
 public static class TestUtils
 {
     public static Collision2D CreateCollision(GameObject obj)
