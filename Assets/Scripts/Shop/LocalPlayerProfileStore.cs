@@ -17,7 +17,6 @@ public class LocalPlayerProfileStore : IPlayerProfileStore
                 equippedBuddy = "none",
                 hookSpeedLevel = 0,
                 moveSpeedLevel = 0,
-                garbageBuddyHitboxLevel = 0
             };
         }
 

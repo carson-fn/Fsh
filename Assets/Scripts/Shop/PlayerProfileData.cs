@@ -10,5 +10,6 @@ public class PlayerProfileData
 
     public int hookSpeedLevel;
     public int moveSpeedLevel;
-    public int garbageBuddyHitboxLevel;
+    public int buddyHitboxLevel;
+    public int highestLevelReached;
 }

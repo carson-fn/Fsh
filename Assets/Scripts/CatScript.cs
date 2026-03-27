@@ -28,6 +28,10 @@ public class CatScript : MonoBehaviour
         leftOutOfBoundX = CharacterScript.getLeftOutOfBoundX();
         rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
+        if (PlayerProfileManager.Instance != null)
+        {
+            movementSpeed = PlayerProfileManager.Instance.GetMoveSpeed();
+        }
     }
 
     public static CatScript getInstance()
