@@ -104,13 +104,13 @@ public class MagnetScript : MonoBehaviour
                 movementDirection = new Vector2(0, 0);
                 fishing = false;
                 returnStart = false;
-                Debug.Log("MAGNET RETURNED TO STARTING POSTION\n");
+                //Debug.Log("MAGNET RETURNED TO STARTING POSTION\n");
             }
         }
  
         else if ((transform.localPosition.y <= lowestPosition))
         {
-            Debug.Log("TRYING TO RETURN TO START\n");
+            //Debug.Log("TRYING TO RETURN TO START\n");
             returnStart = true;
             returnToStart();
         }
@@ -165,11 +165,11 @@ public class MagnetScript : MonoBehaviour
         else if (collision.gameObject.tag == "Trash")
         {
             TrashSpawnerScript.increaseNumTrashCollected(1);
-            Debug.Log("fish hit trash\n");
+            //Debug.Log("fish hit trash\n");
         }
         else
         {
-            Debug.Log("HIT SMTH ??? \n");
+            //Debug.Log("HIT SMTH ??? \n");
             //movementDirection = new Vector2(-1, 1); // hehe 
         }
         

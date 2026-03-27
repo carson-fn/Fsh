@@ -16,6 +16,7 @@ public class GameOverLogicScript : MonoBehaviour
     public GameObject nextButton;
     [SerializeField] private TextMeshProUGUI finalScoreText;
 
+    private float BOSS_LVL = -1;
     private float PERCENT_1STAR = 0.6f;
     private float PERCENT_2STAR = 0.75f;
     private float PERCENT_3STAR = 0.92f;
@@ -27,6 +28,7 @@ public class GameOverLogicScript : MonoBehaviour
  
     void Awake()
     {
+        Debug.Log($"XXX Awake/Start running: {this.GetType().Name}");
         Instance = this;
         GameObject star1 = GameObject.FindGameObjectWithTag("Star1");
         GameObject star2 = GameObject.FindGameObjectWithTag("Star2");
@@ -38,6 +40,7 @@ public class GameOverLogicScript : MonoBehaviour
         {
             stars[i].SetActive(false);
         }
+        BOSS_LVL = LevelScreenLogic.getBOSS_LVL();
         
     }
     void Start()
@@ -46,6 +49,7 @@ public class GameOverLogicScript : MonoBehaviour
        //finalScoreText = TextMeshPro.FindGameObjectWithTag("FinalScoreText");
         //Instance = this;
        GameOverScreen.SetActive(false); 
+       Debug.Log("GAME OVER SCREEN SET TO FALSE\n");
     }
     public static GameOverLogicScript getInstance()
     {
@@ -55,6 +59,7 @@ public class GameOverLogicScript : MonoBehaviour
     private void resetGame()
     {
         LogicScript.setDead(false);
+        
 
         GameOverScreen.SetActive(false);
         LogicScript.setScore(0);
@@ -64,25 +69,34 @@ public class GameOverLogicScript : MonoBehaviour
 
     public void goToLevel(int lvl) // mm idk abt putting this here ngl but idk 
     {
-        SceneManager.LoadScene("Game");
         LogicScript.setLevel(lvl);
         Debug.Log("IN GO to lVEL FUNC \n");
         resetGame();
+        if (lvl == BOSS_LVL)
+        {
+            Debug.Log($"GOING TO BOSS LVL:{lvl}\n");
+            LogicScript.setStartGame(false);
+            SceneManager.LoadScene("Biome1BossLvl");
+            //BossPanelScript.openBossStartScreen();
+        }
+        else
+        {
+            Debug.Log($"GOING TO LVL:{lvl}\n");
+            LogicScript.setStartGame(true);
+            SceneManager.LoadScene("Game");
+        }     
     }
 
     public void restartLevel()
     {
         goToLevel(LogicScript.getLevel());
-        resetGame();
         
     }
 
     public void nextLevel()
     {
-        Debug.Log("INSIDE NEXT LVL \n");
         goToLevel(LogicScript.getLevel() + 1);
-        resetGame();
-        Debug.Log("SWITCHed TO NEXT LVL \n");
+        //resetGame();
     }
 
     public void goHome()
@@ -101,15 +115,24 @@ public class GameOverLogicScript : MonoBehaviour
 
     }
 
-    public void gameOver()
+    public static void openGameOverScreen()
     {
         GameOverScreen.SetActive(true);
-        // if its at last level, disable the next button!!
-        if(LogicScript.getLevel() >= 3) 
+    }
+
+    public void gameOver()
+    {
+        if ((LogicScript.getLevel() != BOSS_LVL) || BossPanelScript.getOpenGOScreen())
         {
-            // GameObject nextButton = GameObject.FindGameObjectWithTag("NextButton");
-            nextButton.SetActive(false);
+            openGameOverScreen();
         }
+
+        // if its at last level, disable the next button!!
+        // if(LogicScript.getLevel() >= BOSS_LVL) 
+        // {
+        //     // GameObject nextButton = GameObject.FindGameObjectWithTag("NextButton");
+        //     nextButton.SetActive(false);
+        // }
         Debug.Log("IN GAME OVER SCREEN DISPLAYED \n");
         finalScoreText.text = $"Score: {LogicScript.getScore()}";
         Debug.Log("SCORE DISPLAYED\n");
@@ -136,6 +159,8 @@ public class GameOverLogicScript : MonoBehaviour
         Debug.Log($"NUM STARS ACHIEVED: {num_stars_achieved}\n");
         displayStars();
 
+        LogicScript.setStartGame(false);
+
     }
 
     // Update is called once per frame
@@ -145,5 +170,11 @@ public class GameOverLogicScript : MonoBehaviour
         {
             gameOver();
         }
+        
+        // else if (LogicScript.getLevel() == BOSS_LVL && !BossPanelScript.getOpenGOScreen())
+        // {
+        //     //Debug.Log("Update - force hiding GameOverScreen on boss level"); // ADD THIS
+        //     GameOverScreen.SetActive(false);
+        // }
     }
 }

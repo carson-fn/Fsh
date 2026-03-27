@@ -7,6 +7,7 @@ public class TrashSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject Trash2;
     [SerializeField] private GameObject Trash3;
     [SerializeField] private GameObject Trash4;
+    [SerializeField] private float avgSpawnRate = 5;
 
     private int NUM_TRASH_TYPES = 4;
     private List<GameObject> trashList = new List<GameObject>();
@@ -29,6 +30,12 @@ public class TrashSpawnerScript : MonoBehaviour
         trashList.Add(Trash2);
         trashList.Add(Trash3);
         trashList.Add(Trash4);
+
+        level = LogicScript.getLevel();
+        if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
+        {
+            avgSpawnRate = 14 - (level * level);
+        }
         
     }
     public static int getTotalNumTrashSpawned()
@@ -47,7 +54,7 @@ public class TrashSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!(LogicScript.getDead()))
+        if (!(LogicScript.getDead()) && LogicScript.getStartGame())
         {
              if (timer < spawnRate)
             {
@@ -57,7 +64,7 @@ public class TrashSpawnerScript : MonoBehaviour
             {
                 spawnTrash();
                 timer = 0;
-                spawnRate = Random.Range(3, 6);
+                spawnRate = Random.Range(avgSpawnRate - 1, avgSpawnRate + 1);
             }
             
         }

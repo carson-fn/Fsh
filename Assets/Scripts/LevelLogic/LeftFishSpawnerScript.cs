@@ -7,9 +7,9 @@ public class LeftFishSpawnerScript : MonoBehaviour
     public GameObject leftFish2;
     public GameObject leftFish3;
     public GameObject leftFish4;
-    public List<GameObject> fishes;
+    private List<GameObject> fishes = new List<GameObject>();
     [SerializeField] private float spawnRate = 2;
-    [SerializeField] private float avgSpawnRate;
+    [SerializeField] private float avgSpawnRate = 5;
     private float timer = 0;
     [SerializeField] private float lowestPoint = -3.4f;
     [SerializeField] private float highestPoint = -1.5f;
@@ -19,15 +19,21 @@ public class LeftFishSpawnerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //avgSpawnRate = 10 - (level * level);
+        
         fishes.Add(leftFish1);
         fishes.Add(leftFish2);
         fishes.Add(leftFish3);
         fishes.Add(leftFish4);
         Debug.Log("ADDED FISHES");
         Debug.Log(fishes.Count);
-        spawnLeftFish();
+        //spawnLeftFish();
         level = LogicScript.getLevel();
-        avgSpawnRate = 14 - (level * level); // just for now, we can make better later
+        if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
+        {
+            avgSpawnRate = 14 - (level * level);
+        }
+         // just for now, we can make better later
         // bc spawn rate atm is like how much time between spawn, not fish per time 
     }
 
@@ -35,7 +41,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     void Update()
     {
 
-        if (!(LogicScript.getDead()))
+        if (!(LogicScript.getDead()) && LogicScript.getStartGame())
         {
             if (timer < spawnRate)
             {
@@ -46,6 +52,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
                 spawnLeftFish();
                 timer = 0;
                 spawnRate = Random.Range(avgSpawnRate - 1, avgSpawnRate + 1);
+                
             }
 
             
