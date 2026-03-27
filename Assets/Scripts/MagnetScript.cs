@@ -8,9 +8,9 @@ public class MagnetScript : MonoBehaviour
     [SerializeField] private SpriteRenderer mySpriteRenderer;
 
     [SerializeField] private Sprite noBuddySprite;
-    [SerializeField] private Sprite liamBuddySprite;
-    [SerializeField] private Sprite haroldBuddySprite;
-    [SerializeField] private Sprite carsonBuddySprite;
+    [SerializeField] private Sprite frogBuddySprite;
+    [SerializeField] private Sprite crabBuddySprite;
+    [SerializeField] private Sprite penguinBuddySprite;
 
     private Vector2 movementDirection;
 
@@ -80,14 +80,14 @@ public class MagnetScript : MonoBehaviour
 
         switch (equippedBuddy)
         {
-            case "liam":
-                mySpriteRenderer.sprite = liamBuddySprite;
+            case "frog":
+                mySpriteRenderer.sprite = frogBuddySprite;
                 break;
-            case "harold":
-                mySpriteRenderer.sprite = haroldBuddySprite;
+            case "crab":
+                mySpriteRenderer.sprite = crabBuddySprite;
                 break;
-            case "carson":
-                mySpriteRenderer.sprite = carsonBuddySprite;
+            case "penguin":
+                mySpriteRenderer.sprite = penguinBuddySprite;
                 break;
             default:
                 mySpriteRenderer.sprite = noBuddySprite;
