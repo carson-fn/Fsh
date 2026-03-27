@@ -83,7 +83,7 @@ public class GameOverLogicScript : MonoBehaviour
         {
             Debug.Log($"GOING TO LVL:{lvl}\n");
             LogicScript.setStartGame(true);
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Biome1GameLvl");
         }     
     }
 
@@ -122,10 +122,11 @@ public class GameOverLogicScript : MonoBehaviour
 
     public void gameOver()
     {
-        if ((LogicScript.getLevel() != BOSS_LVL) || BossPanelScript.getOpenGOScreen())
-        {
-            openGameOverScreen();
-        }
+        // if ((LogicScript.getLevel() != BOSS_LVL) || BossPanelScript.getOpenGOScreen())
+        // {
+        //     openGameOverScreen();
+        // }
+        openGameOverScreen();
 
         // if its at last level, disable the next button!!
         // if(LogicScript.getLevel() >= BOSS_LVL) 
@@ -166,7 +167,7 @@ public class GameOverLogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LogicScript.getDead() && !GameOverScreen.activeSelf)
+        if (LogicScript.getDead() && (!GameOverScreen.activeSelf) && (LogicScript.getLevel() != BOSS_LVL))
         {
             gameOver();
         }

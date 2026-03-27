@@ -19,16 +19,21 @@ public class BossPanelScript : MonoBehaviour
         endScreenOpened = false; 
         openGOScreen = false;
 
-    }
-
-    void Start()
-    {
         Debug.Log("BOSS PANEL START RUNNING");
 
         BossEndScreen.SetActive(false);
         BossStartScreen.SetActive(true);
 
     }
+
+    // void Start()
+    // {
+    //     Debug.Log("BOSS PANEL START RUNNING");
+
+    //     BossEndScreen.SetActive(false);
+    //     BossStartScreen.SetActive(true);
+
+    // }
 
     // Update is called once per frame
     void Update()
@@ -74,13 +79,17 @@ public class BossPanelScript : MonoBehaviour
         Debug.Log("IN CLOSE BOSS END SCREEN, OPEN GOVER SCREEN\n");
         openGOScreen = true;
         BossEndScreen.SetActive(false); 
-        GameOverLogicScript.openGameOverScreen();
+        //GameOverLogicScript.openGameOverScreen();
+        GameOverLogicScript.getInstance().gameOver();
         //endScreenOpened = false;
         Debug.Log("IN CLOSE BOSS END SCREEN, OPEN GOVER SCREEN\n");
     }
     public static void openEndScreen()
     {
+        Debug.Log("blue - TRYING TO SET BOSS END SCREEN ACTIVE!!! \n\n\n\n");
         endScreenOpened = true; 
+        //BossEndScreen = GameObject.FindGameObjectWithTag("BossEndPanel");
         BossEndScreen.SetActive(true); 
+        
     }
 }

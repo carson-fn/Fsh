@@ -7,7 +7,7 @@ public class TrashSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject Trash2;
     [SerializeField] private GameObject Trash3;
     [SerializeField] private GameObject Trash4;
-    [SerializeField] private float avgSpawnRate = 5;
+    [SerializeField] private float avgSpawnRate = 3;
 
     private int NUM_TRASH_TYPES = 4;
     private List<GameObject> trashList = new List<GameObject>();
