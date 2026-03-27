@@ -15,7 +15,6 @@ public class CharacterScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameObject.name = "hewoo";
         myRigidBody = GetComponent<Rigidbody2D>();
     }
     public static float getLeftOutOfBoundX()
@@ -31,27 +30,7 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Keyboard.current.aKey.isPressed)
-        // {
-        //     movementDirection = new Vector2(-1, 0);
-        //     //transform.position = transform.position + Vector3.left * moveSpeed * Time.deltaTime;
 
-        // }
-
-        // else if (Keyboard.current.dKey.isPressed)
-        // {
-        //     movementDirection = new Vector2(1, 0);
-        //     //transform.position = transform.position + Vector3.right * moveSpeed * Time.deltaTime;
-
-        // }
-        //myRigidBody.linearVelocity = movementDirection * moveSpeed;
 
     }
-    void FixedUpdate()
-    {
-        //myRigidBody.linearVelocity = movementDirection * movementSpeed;
-    }
-
-
-
 }

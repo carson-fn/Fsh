@@ -11,6 +11,12 @@ TagManager:
   - GameOverScreen
   - FinalScoreText
   - NextButton
+  - Star1
+  - Star2
+  - Star3
+  - BossStartPanel
+  - BossEndPanel
+  - PlayAgainImage
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using System;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditorInternal;
+using System.Data;
 
 enum LEVELS {
     LEVEL0 = 0,
@@ -18,7 +19,9 @@ public class LogicScript : MonoBehaviour
     private static int level;
     private static float elapsedTime;
     [SerializeField] private static float startTimeSeconds = 60f;
-    private static float timeLeftSeconds;
+    private static float timeLeftSeconds = 60f;
+
+    private static bool startGame = false;
 
     [SerializeField] private static bool dead = false;
 
@@ -32,9 +35,23 @@ public class LogicScript : MonoBehaviour
 
     private static LogicScript Instance;
 
+    public static bool getStartGame()
+    {
+        return startGame;
+    }
+
+    public static void setStartGame(bool start)
+    {
+        startGame = start;
+    }
     public static void setScore(int s)
     {
         score = s;
+    }
+
+    public static void setTime( int seconds)
+    {
+     timeLeftSeconds = seconds;   
     }
     public static void decreaseTime(int seconds)
     {
@@ -121,14 +138,16 @@ public class LogicScript : MonoBehaviour
         {
             displayTime();
             displayScore();
-            countdownTimer();
+            if (startGame) {
+                countdownTimer();
+            }
         }
-        else
-        {
-            GameOverLogicInstance.gameOver();
-            // display game over scene ?? 
-            Debug.Log("GAME OVER\n");
-        }
+        // else
+        // {
+        //     GameOverLogicInstance.gameOver();
+        //     // display game over scene ?? 
+        //     Debug.Log("GAME OVER\n");
+        // }
         
 
         

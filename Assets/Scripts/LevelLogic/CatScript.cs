@@ -10,6 +10,10 @@ public class CatScript : MonoBehaviour
     public static Sprite buddyLiam;
     public static Sprite buddyHarold;
     public static Sprite buddyCarson;
+
+    private static float startX = -5.3f;
+    private static float startY = 3f;
+    private static float startZ = 0f;
     
     private bool fishing;
     [SerializeField] private float movementSpeed = 3f;
@@ -23,11 +27,15 @@ public class CatScript : MonoBehaviour
     {
         Instance = this;
         fishing = false;
-        gameObject.name = "cattt";
+
         myRigidBody = GetComponent<Rigidbody2D>();
         leftOutOfBoundX = CharacterScript.getLeftOutOfBoundX();
         rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
+    }
+    public static void setPlayerToStart()
+    {
+        Instance.transform.position = new Vector3(startX, startY, startZ);
     }
 
     public static CatScript getInstance()
@@ -46,12 +54,14 @@ public class CatScript : MonoBehaviour
         }
         else
         {
-            if (Keyboard.current.aKey.isPressed && !fishing)
+            bool leftKeyPressed = Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed;
+            bool rightKeyPressed = Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed;
+
+            if (leftKeyPressed && !fishing)
             {
                 movementDirection = new Vector2(-1, 0);
             }
-
-            else if (Keyboard.current.dKey.isPressed && !fishing)
+            else if (rightKeyPressed && !fishing)
             {
                 movementDirection = new Vector2(1, 0);
             }
@@ -59,35 +69,22 @@ public class CatScript : MonoBehaviour
             {
                 movementDirection = new Vector2(0, 0);
             }
-            // else if (Keyboard.current.fKey.isPressed)
-            // {
-            //     movementDirection = new Vector2(0, 0);
-            
-            // }
+
 
             if((transform.position.x < leftOutOfBoundX) && (myRigidBody.linearVelocityX < 0))
             {
                 transform.position = new Vector3(rightOutOfBoundX, transform.position.y, transform.position.z);
-                Debug.Log("OUT OF BOUNDS ON LEFT\n");
                 movementDirection = new Vector2(-1, 0);
             }
             else if((transform.position.x > rightOutOfBoundX) && (myRigidBody.linearVelocityX > 0))
             {
-                Debug.Log("OUT OF BOUNDS ON RIGHT\n");
                 transform.position = new Vector3(leftOutOfBoundX, transform.position.y, transform.position.z);
                 movementDirection = new Vector2(1, 0);
             }
         }
         
-        
-
-        
         myRigidBody.linearVelocity = movementDirection * movementSpeed;
 
     }
 
-    void FixedUpdate()
-    {
-        //myRigidBody.linearVelocity = movementDirection * movementSpeed;
-    }
 }

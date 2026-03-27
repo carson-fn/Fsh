@@ -18,7 +18,7 @@ public class LeftFishScript : MonoBehaviour
     {
         transform.position = transform.position + Vector3.left * moveSpeed * Time.deltaTime;
 
-        if (transform.position.x < deadZone)
+        if ((transform.position.x < deadZone) || (LogicScript.getDead()))
         {
             DestroyFish();
         }
@@ -36,8 +36,10 @@ public class LeftFishScript : MonoBehaviour
             currentScale.y * scaleMultiplier,
             currentScale.z);
 
-        // Apply the new scale to the transform
-        transform.localScale = newScale;
+            TrashSpawnerScript.decreaseNumTrashCollected(0.2f); 
+            // additional penalty for hitting fish, since stars based off of % trash collected
+
+            transform.localScale = newScale;
             Invoke("DestroyFish", 2f); // calls the destroyfish func after 2 seconds
             
             
