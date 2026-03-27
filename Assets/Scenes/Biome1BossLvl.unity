@@ -3605,7 +3605,6 @@ MonoBehaviour:
   Trash2: {fileID: 4764272589745388700, guid: 824473bc6bfdd4837af36bcdc72b4d14, type: 3}
   Trash3: {fileID: 6421668653066874905, guid: dd3410a6251be4d968afbad7204c25ae, type: 3}
   Trash4: {fileID: 783151983947880645, guid: e35fca8479afe4b36a7c9bd616f00a67, type: 3}
-  avgSpawnRate: 3
   lowestPointY: -4
   highestPointY: 0.5
   lowestPointX: -6.5
@@ -4566,7 +4565,6 @@ MonoBehaviour:
   leftFish3: {fileID: 7021036469452980094, guid: 0fa1480ef0a254a24ae777c4da4734cc, type: 3}
   leftFish4: {fileID: 8268624566302536213, guid: fff262f13d1714f92af25521a368a7f6, type: 3}
   spawnRate: 2
-  avgSpawnRate: 0
   lowestPoint: -3
   highestPoint: 0.5
 --- !u!4 &1779507013

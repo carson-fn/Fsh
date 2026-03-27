@@ -26,25 +26,33 @@ public class BossPanelScript : MonoBehaviour
 
     }
 
-    // void Start()
-    // {
-    //     Debug.Log("BOSS PANEL START RUNNING");
+    void Start()
+    {
+        Debug.Log("BOSS PANEL START RUNNING");
+        LeftFishSpawnerScript.setAvgSpawnRate(6);
+        TrashSpawnerScript.setAvgSpawnRate(1.5f);
 
-    //     BossEndScreen.SetActive(false);
-    //     BossStartScreen.SetActive(true);
+        // BossEndScreen.SetActive(false);
+        // BossStartScreen.SetActive(true);
 
-    // }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // BossStartScreen = GameObject.FindGameObjectWithTag("BossStartPanel");
-        // Debug.Log($"BOSS START SCREEN: {BossStartScreen}\n\n\nbanana\n\n\n");
-        // BossStartScreen.SetActive(true);
-        if (LogicScript.getDead() && !endScreenOpened)
+
+        bool passedBoss = (GameOverLogicScript.getInstance().getNumStarsAchieved() == 3);
+
+        if (LogicScript.getDead() && !endScreenOpened && passedBoss)
         {
             Debug.Log("TRYING TO OPEN END BOSS SCREEN! \n\n");
             openEndScreen();
+            GameOverLogicScript.getInstance().removePlayAgainImage();
+
+        }
+        else if (LogicScript.getDead())
+        {
+            GameOverLogicScript.getInstance().gameOver();
         }
         
         
@@ -77,11 +85,8 @@ public class BossPanelScript : MonoBehaviour
     {
         Debug.Log("HELLOOOOOOOO\n\n\n\nLALALLALALAL\n\n\n\n\n\n");
         Debug.Log("IN CLOSE BOSS END SCREEN, OPEN GOVER SCREEN\n");
-        //openGOScreen = true;
         BossEndScreen.SetActive(false); 
-        //GameOverLogicScript.openGameOverScreen();
         GameOverLogicScript.getInstance().gameOver();
-        //endScreenOpened = false;
         Debug.Log("IN CLOSE BOSS END SCREEN, OPEN GOVER SCREEN\n");
     }
     public static void openEndScreen()

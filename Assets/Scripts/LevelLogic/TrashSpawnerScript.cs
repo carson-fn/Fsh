@@ -7,7 +7,7 @@ public class TrashSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject Trash2;
     [SerializeField] private GameObject Trash3;
     [SerializeField] private GameObject Trash4;
-    [SerializeField] private float avgSpawnRate = 3;
+    [SerializeField] private static float avgSpawnRate = 3;
 
     private float trashCountPerSpawn = 1;
 
@@ -15,6 +15,8 @@ public class TrashSpawnerScript : MonoBehaviour
     private List<GameObject> trashList = new List<GameObject>();
     private static int totalNumTrashSpawned = 0;
     private static int numTrashCollected = 0;
+
+    private bool firstBossSpawn = false;
 
     [SerializeField] private float lowestPointY = -4f;
     [SerializeField] private float highestPointY = 0.0f;
@@ -27,7 +29,6 @@ public class TrashSpawnerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        level = LogicScript.getLevel(); // not rly doing anything w this for now ... 
         trashList.Add(Trash1);
         trashList.Add(Trash2);
         trashList.Add(Trash3);
@@ -36,13 +37,15 @@ public class TrashSpawnerScript : MonoBehaviour
         level = LogicScript.getLevel();
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
-            avgSpawnRate = 6 - (level * 1.5f);
+            avgSpawnRate = 6 - (level * 2f);
         }
-        else
-        {
-            trashCountPerSpawn = 2;
-        }
+
         
+    }
+
+    public static void setAvgSpawnRate(float rate)
+    {
+        avgSpawnRate = rate;
     }
     public static int getTotalNumTrashSpawned()
     {
@@ -80,17 +83,34 @@ public class TrashSpawnerScript : MonoBehaviour
 
     void spawnTrash()
     {
+        bool bossLvl = LogicScript.getLevel() == LevelScreenLogic.getBOSS_LVL();
 
-        for (int i = 0; i < trashCountPerSpawn; i++)
+        if (bossLvl && !firstBossSpawn)
         {
-            totalNumTrashSpawned++;
+            firstBossSpawn = true;
+            for (int i = 0; i < 8; i++)
+            {
+                totalNumTrashSpawned++;
 
-            int trashSpawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
-            Instantiate(trashList[trashSpawnIndex], 
-            new Vector3(Random.Range(lowestPointX, highestPointX), 
-            Random.Range(lowestPointY, highestPointY), transform.position.z), 
-            transform.rotation);
+                float spawnX = Random.Range(lowestPointX + 1, highestPointX -1);
+                float spawnY = Random.Range(lowestPointY + 1, highestPointY -1);
+
+                int spawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
+                Instantiate(trashList[spawnIndex], 
+                new Vector3(Random.Range(spawnX - 1, spawnX + 1), 
+                Random.Range(spawnY - 1, spawnY + 1), transform.position.z), 
+                transform.rotation);
+            }
+            
         }
+
+        totalNumTrashSpawned++;
+
+        int trashSpawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
+        Instantiate(trashList[trashSpawnIndex], 
+        new Vector3(Random.Range(lowestPointX, highestPointX), 
+        Random.Range(lowestPointY, highestPointY), transform.position.z), 
+        transform.rotation);
         
     }
 

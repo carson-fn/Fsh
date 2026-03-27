@@ -27,21 +27,7 @@ public class BuddyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        changeBuddy(buddies[LogicScript.getLevel()]);
-
-        // // just testing out based on lvls for now, can change later !!!
-        // switch(LogicScript.getLevel())
-        // {
-        //     case 1:
-        //         changeBuddy(liamBuddy);
-        //         break;
-        //     case 2:
-        //         changeBuddy(haroldBuddy);
-        //         break;
-        //     case 3:
-        //         changeBuddy(carsonBuddy);
-        //         break;
-        // }
+        changeBuddy(buddies[LogicScript.getLevel() - 1]);
         
     }
 }

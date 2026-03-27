@@ -59,27 +59,16 @@ public class MagnetScript : MonoBehaviour
     void Update()
     {
         
-        // if (Keyboard.current.aKey.isPressed && !fishing)
-        // {
-        //     movementDirection = new Vector2(-1, 0);
-        // }
-        
-
-        // else if (Keyboard.current.dKey.isPressed && !fishing)
-        // {
-        //     movementDirection = new Vector2(1, 0);
-        // }
         if(!(LogicScript.getDead()))
         {
-            if (Keyboard.current.sKey.isPressed)
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
             {
                 fishing = true;
                 returnStart = false;
                 movementDirection = new Vector2(0, -1);
             }
-            if (Keyboard.current.wKey.isPressed)
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
             {
-                //fishing = true;
                 movementDirection = new Vector2(0, 1);
             }
 
@@ -104,13 +93,11 @@ public class MagnetScript : MonoBehaviour
                 movementDirection = new Vector2(0, 0);
                 fishing = false;
                 returnStart = false;
-                //Debug.Log("MAGNET RETURNED TO STARTING POSTION\n");
             }
         }
  
         else if ((transform.localPosition.y <= lowestPosition))
         {
-            //Debug.Log("TRYING TO RETURN TO START\n");
             returnStart = true;
             returnToStart();
         }
@@ -118,33 +105,20 @@ public class MagnetScript : MonoBehaviour
         if (returnStart)
         {
             returnToStart();
-            // if ((transform.localPosition.y >= localStartPositionY) && 
-            // (transform.localPosition.x == localStartPositionX))
-            // {
-            //     returnStart = false;
-            //     fishing = false;
-            //     movementDirection = new Vector2(0, 0);
-            // }
         }
         myRigidBody.linearVelocity = movementDirection * movementSpeed;
 
         if((transform.position.x < leftOutOfBoundX) && (myRigidBody.linearVelocityX < 0))
         {
             transform.position = new Vector3(rightOutOfBoundX, transform.position.y, transform.position.z);
-            Debug.Log("OUT OF BOUNDS ON LEFT\n");
             movementDirection = new Vector2(-1, 0);
         }
         else if((transform.position.x > rightOutOfBoundX) && (myRigidBody.linearVelocityX > 0))
         {
-            Debug.Log("OUT OF BOUNDS ON RIGHT\n");
             transform.position = new Vector3(leftOutOfBoundX, transform.position.y, transform.position.z);
             movementDirection = new Vector2(1, 0);
         }
         
-    }
-    void FixedUpdate()
-    {
-        //myRigidBody.linearVelocity = movementDirection * movementSpeed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -158,19 +132,12 @@ public class MagnetScript : MonoBehaviour
             if (timeLeft <= 10) {
                 LogicScript.decreaseTime((int) timeLeft);
             }
-            // TESTING STUFF 
-            //mySpriteRenderer.sprite = jellyfishSprite;
             
         }
         else if (collision.gameObject.tag == "Trash")
         {
             TrashSpawnerScript.increaseNumTrashCollected(1);
             //Debug.Log("fish hit trash\n");
-        }
-        else
-        {
-            //Debug.Log("HIT SMTH ??? \n");
-            //movementDirection = new Vector2(-1, 1); // hehe 
         }
         
     }
@@ -183,6 +150,5 @@ public class MagnetScript : MonoBehaviour
         movementDirection = new Vector2((PlayerPositionX + localStartPositionX - transform.position.x)/movementSpeed, 
         (PlayerPositionY + localStartPositionY - transform.position.y)/movementSpeed);
 
-        //movementDirection = new Vector2((1.4f - transform.localPosition.x)/movementSpeed, (-1.3f - transform.localPosition.y)/movementSpeed);
     }
 }
