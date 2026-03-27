@@ -77,7 +77,7 @@ public class BossPanelScript : MonoBehaviour
     {
         Debug.Log("HELLOOOOOOOO\n\n\n\nLALALLALALAL\n\n\n\n\n\n");
         Debug.Log("IN CLOSE BOSS END SCREEN, OPEN GOVER SCREEN\n");
-        openGOScreen = true;
+        //openGOScreen = true;
         BossEndScreen.SetActive(false); 
         //GameOverLogicScript.openGameOverScreen();
         GameOverLogicScript.getInstance().gameOver();
@@ -87,9 +87,10 @@ public class BossPanelScript : MonoBehaviour
     public static void openEndScreen()
     {
         Debug.Log("blue - TRYING TO SET BOSS END SCREEN ACTIVE!!! \n\n\n\n");
-        endScreenOpened = true; 
         //BossEndScreen = GameObject.FindGameObjectWithTag("BossEndPanel");
+        Debug.Log($"BOSS END SCREEN IS NULL? : {BossEndScreen == null}\n");
         BossEndScreen.SetActive(true); 
+        endScreenOpened = true; 
         
     }
 }

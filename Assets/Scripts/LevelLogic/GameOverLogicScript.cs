@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 
 
@@ -60,7 +61,7 @@ public class GameOverLogicScript : MonoBehaviour
     {
         LogicScript.setDead(false);
         
-
+        CatScript.setPlayerToStart();
         GameOverScreen.SetActive(false);
         LogicScript.setScore(0);
         LogicScript.resetTimer(60f);

@@ -31,7 +31,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
         level = LogicScript.getLevel();
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
-            avgSpawnRate = 14 - (level * level);
+            avgSpawnRate = 10 - (level * 2f);
         }
          // just for now, we can make better later
         // bc spawn rate atm is like how much time between spawn, not fish per time 

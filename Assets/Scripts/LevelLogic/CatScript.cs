@@ -10,6 +10,10 @@ public class CatScript : MonoBehaviour
     public static Sprite buddyLiam;
     public static Sprite buddyHarold;
     public static Sprite buddyCarson;
+
+    private static float startX = -5.3f;
+    private static float startY = 3f;
+    private static float startZ = 0f;
     
     private bool fishing;
     [SerializeField] private float movementSpeed = 3f;
@@ -29,7 +33,15 @@ public class CatScript : MonoBehaviour
         rightOutOfBoundX = CharacterScript.getRightOutOfBoundX();
         
     }
+    public static void setPlayerToStart()
+    {
+        Instance.transform.position = new Vector3(startX, startY, startZ);
+    }
 
+    // public static void setPlayerPosition(float x, float y, float z)
+    // {
+    //     Instance.transform.position = new Vector3(x, y, z);
+    // }
     public static CatScript getInstance()
     {
         return Instance;

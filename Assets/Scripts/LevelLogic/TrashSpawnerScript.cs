@@ -34,7 +34,7 @@ public class TrashSpawnerScript : MonoBehaviour
         level = LogicScript.getLevel();
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
-            avgSpawnRate = 14 - (level * level);
+            avgSpawnRate = 6 - (level * 1.5f);
         }
         
     }
