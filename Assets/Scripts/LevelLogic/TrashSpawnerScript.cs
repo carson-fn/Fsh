@@ -9,6 +9,8 @@ public class TrashSpawnerScript : MonoBehaviour
     [SerializeField] private GameObject Trash4;
     [SerializeField] private float avgSpawnRate = 3;
 
+    private float trashCountPerSpawn = 1;
+
     private int NUM_TRASH_TYPES = 4;
     private List<GameObject> trashList = new List<GameObject>();
     private static int totalNumTrashSpawned = 0;
@@ -35,6 +37,10 @@ public class TrashSpawnerScript : MonoBehaviour
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
             avgSpawnRate = 6 - (level * 1.5f);
+        }
+        else
+        {
+            trashCountPerSpawn = 2;
         }
         
     }
@@ -74,13 +80,18 @@ public class TrashSpawnerScript : MonoBehaviour
 
     void spawnTrash()
     {
-        totalNumTrashSpawned++;
 
-        int trashSpawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
-        Instantiate(trashList[trashSpawnIndex], 
-        new Vector3(Random.Range(lowestPointX, highestPointX), 
-        Random.Range(lowestPointY, highestPointY), transform.position.z), 
-        transform.rotation);
+        for (int i = 0; i < trashCountPerSpawn; i++)
+        {
+            totalNumTrashSpawned++;
+
+            int trashSpawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
+            Instantiate(trashList[trashSpawnIndex], 
+            new Vector3(Random.Range(lowestPointX, highestPointX), 
+            Random.Range(lowestPointY, highestPointY), transform.position.z), 
+            transform.rotation);
+        }
+        
     }
 
     

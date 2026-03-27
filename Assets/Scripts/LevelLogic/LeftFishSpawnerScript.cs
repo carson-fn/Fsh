@@ -8,7 +8,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
     public GameObject leftFish3;
     public GameObject leftFish4;
     private List<GameObject> fishes = new List<GameObject>();
-    [SerializeField] private float spawnRate = 2;
+    [SerializeField] private float spawnRate = 6;
     [SerializeField] private float avgSpawnRate = 5;
     private float timer = 0;
     [SerializeField] private float lowestPoint = -3.4f;

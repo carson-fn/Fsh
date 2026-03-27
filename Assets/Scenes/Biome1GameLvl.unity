@@ -747,8 +747,9 @@ GameObject:
   m_Component:
   - component: {fileID: 548058907}
   - component: {fileID: 548058908}
+  - component: {fileID: 548058909}
   m_Layer: 0
-  m_Name: water_background_0
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,6 +825,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &548058909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548058906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5bec6d3672f4f2da50df428df46d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundRenderer: {fileID: 548058908}
+  biome1: {fileID: -964624506582981212, guid: 6d18ba2cac8064c3098ee6233a63f92c, type: 3}
+  biome2: {fileID: -3369709549981322200, guid: d793f2fb0cd35406c80cde4335fbbd5f, type: 3}
+  biome3: {fileID: -3547641759773553353, guid: 49e92eccd5a764395b9c27228eb838ca, type: 3}
 --- !u!1 &631140228
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +890,7 @@ MonoBehaviour:
   liamBuddy: {fileID: -7975506639966547020, guid: a5a1b57c3ae0d4dfeb45fec33f744e94, type: 3}
   haroldBuddy: {fileID: 4233779582481720852, guid: daa4710f521204323953dec55af9f8c5, type: 3}
   carsonBuddy: {fileID: 5440197706420605367, guid: 279142098994d4a94b0b061a5d907da9, type: 3}
+  buddies: []
 --- !u!212 &631140231
 SpriteRenderer:
   m_ObjectHideFlags: 0
