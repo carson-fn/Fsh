@@ -13,12 +13,14 @@ public class TrashSpawnerScript : MonoBehaviour
 
     private int NUM_TRASH_TYPES = 4;
     private List<GameObject> trashList = new List<GameObject>();
-    private static int totalNumTrashSpawned = 0;
-    private static int numTrashCollected = 0;
+    private static float totalNumTrashSpawned = 0;
+    private static float numTrashCollected = 0;
 
     private bool firstBossSpawn = false;
 
     private int BOSS_SPAWN1_NUM_TRASH = 8;
+
+    private float TRASH_GROUP_RADIUS = 0.3f;
 
     [SerializeField] private float lowestPointY = -4f;
     [SerializeField] private float highestPointY = 0.0f;
@@ -39,7 +41,7 @@ public class TrashSpawnerScript : MonoBehaviour
         level = LogicScript.getLevel();
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
-            avgSpawnRate = 6 - (level * 2f);
+            avgSpawnRate = 6 - (level * 1.8f);
         }
 
         
@@ -49,19 +51,19 @@ public class TrashSpawnerScript : MonoBehaviour
     {
         avgSpawnRate = rate;
     }
-    public static int getTotalNumTrashSpawned()
+    public static float getTotalNumTrashSpawned()
     {
         return totalNumTrashSpawned;
     }
-    public static int getNumTrashCollected()
+    public static float getNumTrashCollected()
     {
         return numTrashCollected;
     }
-    public static void increaseNumTrashCollected(int num)
+    public static void increaseNumTrashCollected(float num)
     {
         numTrashCollected += num;
     }
-    public static void decreaseNumTrashCollected(int num)
+    public static void decreaseNumTrashCollected(float num)
     {
         numTrashCollected -= num;
     }
@@ -79,7 +81,7 @@ public class TrashSpawnerScript : MonoBehaviour
             {
                 spawnTrash();
                 timer = 0;
-                spawnRate = Random.Range(avgSpawnRate - 1, avgSpawnRate + 1);
+                spawnRate = Random.Range(avgSpawnRate - 0.5f, avgSpawnRate + 0.5f);
             }
             
         }
@@ -103,8 +105,8 @@ public class TrashSpawnerScript : MonoBehaviour
 
                 int spawnIndex = Random.Range(0, (NUM_TRASH_TYPES)); 
                 Instantiate(trashList[spawnIndex], 
-                new Vector3(Random.Range(spawnX - 0.5f, spawnX + 0.5f), 
-                Random.Range(spawnY - 0.5f, spawnY + 0.5f), transform.position.z), 
+                new Vector3(Random.Range(spawnX - TRASH_GROUP_RADIUS, spawnX + TRASH_GROUP_RADIUS), 
+                Random.Range(spawnY - TRASH_GROUP_RADIUS, spawnY + TRASH_GROUP_RADIUS), transform.position.z), 
                 transform.rotation);
             }
             

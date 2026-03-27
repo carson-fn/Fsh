@@ -36,7 +36,7 @@ public class LeftFishScript : MonoBehaviour
             currentScale.y * scaleMultiplier,
             currentScale.z);
 
-            TrashSpawnerScript.decreaseNumTrashCollected(1); 
+            TrashSpawnerScript.decreaseNumTrashCollected(0.2f); 
             // additional penalty for hitting fish, since stars based off of % trash collected
 
             transform.localScale = newScale;

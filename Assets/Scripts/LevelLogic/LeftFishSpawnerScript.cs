@@ -58,7 +58,7 @@ public class LeftFishSpawnerScript : MonoBehaviour
         if (LogicScript.getLevel() != LevelScreenLogic.getBOSS_LVL())
         {
             avgSpawnRate = 10 - (level * 2f);
-            Debug.Log($"NOT BOSS LVL AVG SPAWN RATE IS {avgSpawnRate}");
+            //Debug.Log($"NOT BOSS LVL AVG SPAWN RATE IS {avgSpawnRate}");
         }
 
         if (!(LogicScript.getDead()) && LogicScript.getStartGame())
