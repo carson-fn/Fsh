@@ -1,6 +1,7 @@
 .env
 
 # IDE / Editor generated
+.env
 .vscode/
 .vsconfig
 .idea/
