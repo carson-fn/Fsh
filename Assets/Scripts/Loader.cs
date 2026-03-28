@@ -6,7 +6,7 @@ public class Loader : MonoBehaviour
 {
     IEnumerator Start()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Instructions");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("TestStartScreen");
         operation.allowSceneActivation = false;
 
         float timer = 0f;

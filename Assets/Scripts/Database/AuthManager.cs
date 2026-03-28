@@ -69,7 +69,7 @@ public class AuthManager : MonoBehaviour
 
             string userId = response.User.Id;
             PlayerProfileManager.Instance.InitializeForUser(userId);
-            SceneManager.LoadScene("Biome1GameLvl");
+            SceneManager.LoadScene("Loader");
         }
         catch (Exception e)
         {
