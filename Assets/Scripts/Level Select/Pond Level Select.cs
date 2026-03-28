@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour
+public class PondLevelSelect : MonoBehaviour
 {
     // Ray Macros
     private const int RAY_DISTANCE = 10; // distance to camera
@@ -60,7 +60,7 @@ public class LevelSelect : MonoBehaviour
                 Debug.Log("scene switched to lvl1name");
                 break;
 
-            //case LEVEL_1_NAME:
+            //case LEVEL_2_NAME:
             //    Debug.Log("mouse click hit level 2, scene switching commence!");
 
             //    SceneManager.LoadScene("lvl2name");
