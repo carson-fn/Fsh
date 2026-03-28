@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 using Client = Supabase.Client;
 
@@ -68,6 +69,7 @@ public class AuthManager : MonoBehaviour
 
             string userId = response.User.Id;
             PlayerProfileManager.Instance.InitializeForUser(userId);
+            SceneManager.LoadScene("Biome1GameLvl");
         }
         catch (Exception e)
         {
