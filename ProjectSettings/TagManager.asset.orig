@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+<<<<<<< HEAD
+  tags: []
+=======
+  tags:
+  - Fish
+  - CatPlayer
+  - Magnet
+  - Trash
+  - GameOverScreen
+  - FinalScoreText
+  - NextButton
+  - Star1
+  - Star2
+  - Star3
+  - BossStartPanel
+  - BossEndPanel
+  - PlayAgainImage
+>>>>>>> origin/dev
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Background
+  - Title
+  - Sprites
+  - 
+<<<<<<< HEAD
+  - Buttons
+=======
+  - Background
+  - Map Biome
+  - 
+  - 
+>>>>>>> origin/dev
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
