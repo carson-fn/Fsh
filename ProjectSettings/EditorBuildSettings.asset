@@ -6,22 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestStartScreen.unity
-    guid: cdbadca7d8730433fa38cd32309e6f48
-  - enabled: 1
-    path: Assets/Scenes/Biome1GameLvl.unity
-    guid: 824ed14c6a0a820479ba5f9aff7ac230
+    path: Assets/Scenes/Start.unity
+    guid: 6f28ded0bd61a674fa8ed106382df2b1
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Start.unity
-    guid: 6f28ded0bd61a674fa8ed106382df2b1
-  - enabled: 1
-    path: Assets/Scenes/SignUpScene.unity
-    guid: a8e11591cb5019c47a5ec2c5a733ad63
-  - enabled: 1
-    path: Assets/Scenes/Biome1BossLvl.unity
-    guid: 0b41783423d3246f49bb9d52ba1a5717
-  m_configObjects: {}
+    path: Assets/Scenes/Instructions.unity
+    guid: 964843ce214ce9e49b87ec29755f2169
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
