@@ -1387,7 +1387,7 @@ MonoBehaviour:
   iconImage: {fileID: 379738747}
   volumeOnSprite: {fileID: 21300000, guid: cbe224efb547a424bbb84badce49a934, type: 3}
   volumeOffSprite: {fileID: 21300000, guid: 20f27542de8538a419ce915fe55e68e0, type: 3}
-  music: {fileID: 0}
+  music: {fileID: 89695939}
 --- !u!114 &379738747
 MonoBehaviour:
   m_ObjectHideFlags: 0
