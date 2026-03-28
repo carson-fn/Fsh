@@ -18,7 +18,11 @@ public class LevelScreenLogic : MonoBehaviour
         LogicScript.setLevel(lvl);
         if(lvl == BOSS_LVL)
         {
+            LogicScript.setBiome(2);
             SceneManager.LoadScene("Biome1BossLvl");
+            //BossImgChanger.changeBossImage(2); // add this line to where u select biome!!!!
+            
+            
         }
         else
         {

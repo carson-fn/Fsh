@@ -72,8 +72,17 @@ public class GameOverLogicScript : MonoBehaviour
         CatScript.setPlayerToStart();
         GameOverScreen.SetActive(false);
         LogicScript.setScore(0);
-        LogicScript.resetTimer(60f);
-        Debug.Log("RESET THINGS AT END OF GAME !!! \n");
+        LogicScript.resetTimer(60f);     
+
+        BossSpriteChangerScript spriteChanger = FindObjectOfType<BossSpriteChangerScript>();
+        if (spriteChanger != null)
+        {
+            spriteChanger.changeSprite(LogicScript.getBiome());
+        }
+        BossImgChanger.changeBossImage(LogicScript.getBiome());
+        Debug.Log($"IN RESET LVL, BIOME IS {LogicScript.getBiome()}");
+
+
     }
 
     public void goToLevel(int lvl) // mm idk abt putting this here ngl but idk 
@@ -171,10 +180,5 @@ public class GameOverLogicScript : MonoBehaviour
             gameOver();
         }
         
-        // else if (LogicScript.getLevel() == BOSS_LVL && !BossPanelScript.getOpenGOScreen())
-        // {
-        //     //Debug.Log("Update - force hiding GameOverScreen on boss level"); // ADD THIS
-        //     GameOverScreen.SetActive(false);
-        // }
     }
 }
