@@ -6,7 +6,7 @@ public class Loader : MonoBehaviour
 {
     IEnumerator Start()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("GameScene");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Instructions");
         operation.allowSceneActivation = false;
 
         float timer = 0f;
