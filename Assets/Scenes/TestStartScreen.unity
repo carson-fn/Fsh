@@ -628,7 +628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OCEAN BIOME
+  m_text: POND BIOME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 946bce0f804422c4dacf4e19c387a4bd, type: 2}
   m_sharedMaterial: {fileID: -9098280134415630440, guid: 946bce0f804422c4dacf4e19c387a4bd, type: 2}

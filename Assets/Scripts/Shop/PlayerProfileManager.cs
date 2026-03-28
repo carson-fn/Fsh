@@ -74,7 +74,7 @@ public class PlayerProfileManager : MonoBehaviour
         return new PlayerProfileData
         {
             userId = userId,
-            coins = 0,
+            coins = 50,
             equippedBuddy = "none",
             hookSpeedLevel = 0,
             moveSpeedLevel = 0,
