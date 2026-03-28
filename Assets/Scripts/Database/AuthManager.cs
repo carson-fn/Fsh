@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 using Client = Supabase.Client;
 
@@ -13,9 +14,23 @@ public class AuthManager : MonoBehaviour
     // Supabase connection as a singleton
     private Client supabase;
 
-    private async void Start()
+    private void SetFeedback(string message)
     {
-        supabase = await Database.GetClientAsync();
+        if (feedbackText != null)
+            feedbackText.text = message;
+    }
+   private async void Start()
+    {
+        try
+        {
+            supabase = await Database.GetClientAsync();
+            SetFeedback("Database connected.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Supabase init failed: " + e.Message);
+            SetFeedback("Database connection failed.");
+        }
     }
 
     public async void RegisterNewUser()
@@ -51,6 +66,10 @@ public class AuthManager : MonoBehaviour
         {
             var response = await supabase.Auth.SignIn(email, password);
             Debug.Log("User logged in: " + response.User.Email);
+
+            string userId = response.User.Id;
+            PlayerProfileManager.Instance.InitializeForUser(userId);
+            SceneManager.LoadScene("Biome1GameLvl");
         }
         catch (Exception e)
         {
