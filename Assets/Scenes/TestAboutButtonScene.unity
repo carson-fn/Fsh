@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -14}
+  m_AnchoredPosition: {x: 0, y: -34}
   m_SizeDelta: {x: 1092.5332, y: 463.8874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440357188
@@ -268,29 +268,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fsh is a 2D fishing game inspired by the United Nations Survival Development
+  m_text: "Fsh is a 2D fishing game inspired by the United Nations Survival Development
     Goal #14 - Life Below Water. We made this game to raise awareness about the marine
-    ecosystem and what we can do to reduce pollution.
-
-
-    The goals of the game
-    are:
-
-    - Try to protect marine life by clearing garbage
-
-    - Clear enough
-    garbage before the time runs out
-
-    - Avoid hitting fish with your hook!
-
-
-    We
-    hope you enjoy playing Fsh!
-
-'
+    ecosystem and what we can do to reduce pollution. \n\nThe goals of the game are:\n-
+    Try to protect marine life by clearing garbage\n- Clear enough garbage before
+    the time runs out\n- Avoid hitting fish with your hook!\n\nWe hope you enjoy
+    playing Fsh!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
-  m_sharedMaterial: {fileID: -6277434294152813106, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -314,8 +300,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43
-  m_fontSizeBase: 43
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -529,8 +515,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 5826050053108416656, guid: 9af08b0398197d14f9ae5368c3ca26d7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -752,8 +738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 558, y: 283}
-  m_SizeDelta: {x: 77.2868, y: 77.2868}
+  m_AnchoredPosition: {x: 533, y: 251}
+  m_SizeDelta: {x: 66, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759111710
 MonoBehaviour:
@@ -883,7 +869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 270.3}
+  m_AnchoredPosition: {x: 0, y: 241}
   m_SizeDelta: {x: 427.546, y: 102.6949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835554018
@@ -909,7 +895,7 @@ MonoBehaviour:
   m_text: About Fsh
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
-  m_sharedMaterial: {fileID: -6277434294152813106, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1045,8 +1031,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: About
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
+  m_sharedMaterial: {fileID: 9017091336030158838, guid: ade95bef43d4d9743a79524dd6d2ca93, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1070,8 +1056,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.7
-  m_fontSizeBase: 41.7
+  m_fontSize: 48.07
+  m_fontSizeBase: 48.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

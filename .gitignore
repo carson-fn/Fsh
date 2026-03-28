@@ -1,4 +1,7 @@
+.env
+
 # IDE / Editor generated
+.env
 .vscode/
 .vsconfig
 .idea/
@@ -6,7 +9,8 @@
 *.slnx
 UpgradeLog.htm
 
-
+# packages
+/Assets/Packages
 
 # Pre-made Unity gitignore below
 
