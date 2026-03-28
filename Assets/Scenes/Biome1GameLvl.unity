@@ -1962,8 +1962,8 @@ MonoBehaviour:
   movementSpeed: 4.5
   myRigidBody: {fileID: 0}
   mySpriteRenderer: {fileID: 1401803495}
-  noBuddySprite: {fileID: 5440197706420605367, guid: 279142098994d4a94b0b061a5d907da9, type: 3}
-  frogBuddySprite: {fileID: 0}
+  noBuddySprite: {fileID: -1838624546736473633, guid: 7ed93f135641147f5b6bd0b7cc9b5cb3, type: 3}
+  frogBuddySprite: {fileID: 773806773357722183, guid: 8f8372438dd95436c8f166c573d8f56f, type: 3}
   crabBuddySprite: {fileID: 0}
   penguinBuddySprite: {fileID: 0}
   localStartPositionX: 1.5
