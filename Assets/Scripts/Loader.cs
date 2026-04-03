@@ -15,7 +15,7 @@ public class Loader : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (operation.progress >= 0.9f && timer >= 2f)
+            if (operation.progress >= 0.9f && timer >= 1.3f)
             {
                 operation.allowSceneActivation = true;
             }

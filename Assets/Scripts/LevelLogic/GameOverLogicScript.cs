@@ -109,7 +109,7 @@ public class GameOverLogicScript : MonoBehaviour
 
     public void goHome()
     {
-        SceneManager.LoadScene("TestStartScreen");
+        SceneManager.LoadScene("Map");
         resetGame();
     }
 

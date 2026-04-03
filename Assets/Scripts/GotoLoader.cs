@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButtonScript : MonoBehaviour
+public class GotoLoader : MonoBehaviour
 {
     public void LoadLoadingScene() {
         SceneManager.LoadScene("Loading");
