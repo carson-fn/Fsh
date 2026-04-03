@@ -4,9 +4,9 @@ using UnityEngine;
 public class BackgroundScript : MonoBehaviour
 {
 
-    private int TEST_BIOME = 1;
+    private int TEST_BIOME = 2;
 
-    public SpriteRenderer backgroundRenderer;  
+    public static SpriteRenderer backgroundRenderer;  
     [SerializeField] private Sprite biome1;
     [SerializeField] private Sprite biome2;
     [SerializeField] private Sprite biome3;
@@ -14,12 +14,12 @@ public class BackgroundScript : MonoBehaviour
     [SerializeField] private static List<Sprite> backgrounds = new List<Sprite>();
 
     
-    private void changeBackground(Sprite newSprite)
+    private static void changeBackground(Sprite newSprite)
     {
         Debug.Log($"TRYING TO RENDER NEW BACKGROUND SPRITE!!! \n");
         backgroundRenderer.sprite = newSprite;
     }
-    public void changeBiome(int biome)
+    public static void changeBiome(int biome)
     {
         changeBackground(backgrounds[biome]);
     }
@@ -36,12 +36,12 @@ public class BackgroundScript : MonoBehaviour
         backgrounds.Add(biome3);
         
         //testing loading diff backgrounds
-        changeBiome(TEST_BIOME);
+        //changeBiome(TEST_BIOME);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //changeBiome(TEST_BIOME);
+        changeBiome(TEST_BIOME);
     }
 }

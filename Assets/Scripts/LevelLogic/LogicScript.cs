@@ -59,6 +59,8 @@ public class LogicScript : MonoBehaviour
     public static void setBiome(int b)
     {
         biome = b;
+        BossImgChanger.changeBossImage(biome);
+        BackgroundScript.changeBiome(biome);
     }
     public static int getBiome()
     {
