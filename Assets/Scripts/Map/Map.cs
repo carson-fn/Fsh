@@ -55,7 +55,7 @@ public class Map : MonoBehaviour
             case POND_NAME:
                 Debug.Log("mouse click hit pond biome, scene switching commence!");
 
-                SceneManager.LoadScene("TestStartScreen");
+                SceneManager.LoadScene("PondLevelSelect");
                 Debug.Log("scene switched to PondLevelSelect");
                 break;
 
