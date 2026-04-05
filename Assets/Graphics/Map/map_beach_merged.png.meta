@@ -103,17 +103,42 @@ TextureImporter:
       name: map_beach_merged_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 7
-        width: 136
-        height: 76
+        x: 0
+        y: 0
+        width: 180
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 35, y: -33}
+        - {x: 40, y: -26}
+        - {x: 50, y: -16}
+        - {x: 58, y: -9}
+        - {x: 62, y: -1}
+        - {x: 63, y: 6}
+        - {x: 62, y: 13}
+        - {x: 53, y: 22}
+        - {x: 45, y: 26}
+        - {x: 26, y: 31}
+        - {x: 1, y: 31}
+        - {x: -30, y: 29}
+        - {x: -47, y: 21}
+        - {x: -58, y: 9}
+        - {x: -66, y: 0}
+        - {x: -70, y: -16}
+        - {x: -68, y: -24}
+        - {x: -64, y: -28}
+        - {x: -57, y: -31}
+        - {x: -39, y: -37}
+        - {x: -30, y: -40}
+        - {x: -18, y: -41}
+        - {x: -8, y: -40}
+        - {x: 12, y: -36}
+        - {x: 26, y: -35}
+      tessellationDetail: 0
       bones: []
       spriteID: 9ad9aa33d395a6010800000000000000
       internalID: 1182855971532873129
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 75d5ba7f98c1b59448c7e5ff4f53aeed
     internalID: 0
     vertices: []
     indices: 
