@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class BossImgChanger : MonoBehaviour
 {
     [SerializeField] private Sprite frogSprite;
+    [SerializeField] private Sprite penguinSprite;
     [SerializeField] private Sprite crabSprite;
+    
     [SerializeField] private GameObject img1;
     [SerializeField] private GameObject img2;
     [SerializeField] private GameObject img3;
@@ -36,6 +38,7 @@ public class BossImgChanger : MonoBehaviour
 
         spriteRenderer = backgroundSpriteRenderer;
         bossSprites.Add(frogSprite);
+        bossSprites.Add(penguinSprite);
         bossSprites.Add(crabSprite);
         biomeImage = GetComponent<Image>();
         images.Add(img1.GetComponent<Image>());
@@ -46,7 +49,7 @@ public class BossImgChanger : MonoBehaviour
     void Start()
     {
         
-        //BossImgChanger.changeBossImage(2);
+        BossImgChanger.changeBossImage(LogicScript.getBiome());
         
     }
     public static void changeBossImage(int biome)
@@ -58,7 +61,7 @@ public class BossImgChanger : MonoBehaviour
 
         for (int i = 0; i < NUM_IMGS; i++)
         {
-            images[i].sprite = bossSprites[biome - 1];//assuming biomes start at 0, not 1
+            images[i].sprite = bossSprites[biome - 1];//assuming biomes start at 1, not 0 (1 - 3) 
         }   
         //spriteRenderer.sprite = bossSprites[biome - 1]; 
     }

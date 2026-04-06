@@ -8,9 +8,9 @@ using UnityEditorInternal;
 using System.Data;
 
 enum BIOME {
-    BIOME0 = 0,
-    BIOME1,
-    BIOME2
+    BIOME1 = 1,
+    BIOME2,
+    BIOME3
 }
 
 enum LEVELS {
@@ -59,8 +59,8 @@ public class LogicScript : MonoBehaviour
     public static void setBiome(int b)
     {
         biome = b;
-        BossImgChanger.changeBossImage(biome);
-        BackgroundScript.changeBiome(biome);
+        //BossImgChanger.changeBossImage(biome);
+        //BackgroundScript.changeBiome(biome);
     }
     public static int getBiome()
     {

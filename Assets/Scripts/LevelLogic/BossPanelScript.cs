@@ -33,7 +33,7 @@ public class BossPanelScript : MonoBehaviour
         TrashSpawnerScript.setAvgSpawnRate(1.8f);
 
         // FIX !!!!
-        BossImgChanger.changeBossImage(2); // input param should be biome (1-3)
+        // BossImgChanger.changeBossImage(2); // input param should be biome (1-3)
         // BossEndScreen.SetActive(false);
         // BossStartScreen.SetActive(true);
 

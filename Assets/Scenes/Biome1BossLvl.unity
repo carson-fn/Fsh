@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogSprite: {fileID: 773806773357722183, guid: 8f8372438dd95436c8f166c573d8f56f, type: 3}
   crabSprite: {fileID: -8781757214100938709, guid: f11717a291a3c4adb9f13f15bc3ed391, type: 3}
+  penguinSprite: {fileID: 2023890860620313602, guid: cd71f9ffb9b2c437ba20fa0269065071, type: 3}
 --- !u!1 &409404867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frogSprite: {fileID: 773806773357722183, guid: 8f8372438dd95436c8f166c573d8f56f, type: 3}
+  penguinSprite: {fileID: 2023890860620313602, guid: cd71f9ffb9b2c437ba20fa0269065071, type: 3}
   crabSprite: {fileID: -8781757214100938709, guid: f11717a291a3c4adb9f13f15bc3ed391, type: 3}
   img1: {fileID: 539297644}
   img2: {fileID: 366000502}
@@ -1604,7 +1606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5bec6d3672f4f2da50df428df46d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundRenderer: {fileID: 548058908}
   biome1: {fileID: -964624506582981212, guid: 6d18ba2cac8064c3098ee6233a63f92c, type: 3}
   biome2: {fileID: -3369709549981322200, guid: d793f2fb0cd35406c80cde4335fbbd5f, type: 3}
   biome3: {fileID: -3547641759773553353, guid: 49e92eccd5a764395b9c27228eb838ca, type: 3}

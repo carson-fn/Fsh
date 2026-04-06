@@ -6,6 +6,7 @@ public class BossSpriteChangerScript : MonoBehaviour
 
     [SerializeField] private Sprite frogSprite;
     [SerializeField] private Sprite crabSprite;
+    [SerializeField] private Sprite penguinSprite;
 
     private SpriteRenderer sr;
     private Vector3 originalScale;
@@ -15,7 +16,9 @@ public class BossSpriteChangerScript : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         originalScale = transform.localScale;
+        // add the boss sprites here !!!
         biomeSprites.Add(frogSprite);
+        biomeSprites.Add(penguinSprite);
         biomeSprites.Add(crabSprite);
     }
 
@@ -27,7 +30,7 @@ public class BossSpriteChangerScript : MonoBehaviour
     public void changeSprite(int biome)
     {
         Sprite oldSprite = sr.sprite;
-        Sprite newSprite = biomeSprites[biome - 1];
+        Sprite newSprite = biomeSprites[biome - 1]; // biome 1 - 3
         sr.sprite = newSprite;
 
         // try to fix size of sprite so all same 

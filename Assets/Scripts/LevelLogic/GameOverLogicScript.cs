@@ -74,12 +74,12 @@ public class GameOverLogicScript : MonoBehaviour
         LogicScript.setScore(0);
         LogicScript.resetTimer(60f);     
 
-        BossSpriteChangerScript spriteChanger = FindObjectOfType<BossSpriteChangerScript>();
-        if (spriteChanger != null)
-        {
-            spriteChanger.changeSprite(LogicScript.getBiome());
-        }
-        BossImgChanger.changeBossImage(LogicScript.getBiome());
+        // BossSpriteChangerScript spriteChanger = FindObjectOfType<BossSpriteChangerScript>();
+        // if (spriteChanger != null)
+        // {
+        //     spriteChanger.changeSprite(LogicScript.getBiome());
+        // }
+        //BossImgChanger.changeBossImage(LogicScript.getBiome());
         Debug.Log($"IN RESET LVL, BIOME IS {LogicScript.getBiome()}");
 
 
