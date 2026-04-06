@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 115390967}
   - component: {fileID: 115390968}
   - component: {fileID: 115390969}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Pond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 682477423}
   - component: {fileID: 682477422}
   - component: {fileID: 682477424}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Biome Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029069581}
   - component: {fileID: 1029069580}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Map Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 1745129046}
   - component: {fileID: 1745129048}
   - component: {fileID: 1745129047}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Beach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 1956879472}
   - component: {fileID: 1956879471}
   - component: {fileID: 1956879470}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Map Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1573,7 +1573,7 @@ GameObject:
   - component: {fileID: 2002522686}
   - component: {fileID: 2002522687}
   - component: {fileID: 2002522688}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Arctic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
