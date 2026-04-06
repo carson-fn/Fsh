@@ -30,11 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Select/PondLevelSelect.unity
     guid: 18f1a89c05544784986b7dfaeea80c51
   - enabled: 1
-    path: Assets/Scenes/Level Select/ArcticLevelSelect.unity
+    path: Assets/Scenes/Level Select/BeachLevelSelect.unity
     guid: c35f60af496838848a23b59ef3f91944
   - enabled: 1
     path: Assets/Scenes/Biome1BossLvl.unity
     guid: 0b41783423d3246f49bb9d52ba1a5717
+  - enabled: 1
+    path: Assets/Scenes/Level Select/ArcticLevelSelect.unity
+    guid: 6f41271aa712adb47a365dee274792eb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
