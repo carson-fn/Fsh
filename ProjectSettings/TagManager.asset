@@ -4,19 +4,23 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Fish
   - CatPlayer
-  - Magnet
-  - Trash
   - GameOverScreen
-  - FinalScoreText
-  - NextButton
   - Star1
+  - FinalScoreText
+  - BossStartPanel
+  - PlayAgainImage
+  - Magnet
+  - BossEndPanel
   - Star2
   - Star3
   - BossStartPanel
   - BossEndPanel
   - PlayAgainImage
+  - Trash
+  - Fish
+  - NextButton
+  - Boss
   layers:
   - Default
   - TransparentFX
