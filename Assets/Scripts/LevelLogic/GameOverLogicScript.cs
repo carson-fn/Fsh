@@ -18,7 +18,7 @@ public class GameOverLogicScript : MonoBehaviour
     private float BOSS_LVL = -1;
     private float PERCENT_1STAR = 0.6f;
     private float PERCENT_2STAR = 0.75f;
-    private float PERCENT_3STAR = 0.88f;
+    private float PERCENT_3STAR = 0.85f;
 
     private int num_stars_achieved = 0; 
 
@@ -156,7 +156,13 @@ public class GameOverLogicScript : MonoBehaviour
         {
             Debug.Log("3 STAR\n");
             num_stars_achieved = 3;
-        }
+            // updating hughest lvl 
+            if (PlayerProfileManager.Instance != null)
+            {
+                int highestLvl = (LogicScript.getBiome() - 1) * 3 + LogicScript.getLevel(); // bc there r 3 lvls for each biome
+                PlayerProfileManager.Instance.UpdateHighestLevelReached(highestLvl);
+            }
+            }
         else if ((percentTrashCollected >= PERCENT_2STAR) || (difference <= (acceptableDiff - 0.5f)))
         {
             Debug.Log("2 STAR\n");
@@ -171,6 +177,7 @@ public class GameOverLogicScript : MonoBehaviour
         displayStars();
 
         LogicScript.setStartGame(false);
+
 
     }
 
