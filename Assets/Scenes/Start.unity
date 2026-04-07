@@ -3977,7 +3977,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1647849036}
-        m_TargetAssemblyTypeName: StartButtonScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: GotoLoader, Assembly-CSharp
         m_MethodName: LoadLoadingScene
         m_Mode: 1
         m_Arguments:
@@ -4035,7 +4035,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1647849031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939001e0d33ea9146892f2fbd340fdf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3558e2770e65c48b78edf5e64c9f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1674560779

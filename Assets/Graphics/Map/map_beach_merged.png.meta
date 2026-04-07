@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dfbccb803288336459d2a4cedae7afbd
+guid: cc0540fe14985454ca0d976dfb5968f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -210077992712124685
-    second: map_lake_merged_0
+      213: 1182855971532873129
+    second: map_beach_merged_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: map_lake_merged_0
+      name: map_beach_merged_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,20 +113,35 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 61, y: -26}
-        - {x: 52, y: -8}
-        - {x: 36, y: 37}
-        - {x: 15, y: 26}
-        - {x: -6, y: 40}
-        - {x: -49, y: -1}
-        - {x: -65, y: -17}
-        - {x: -54, y: -32}
-        - {x: -7, y: -40}
-        - {x: 52, y: -40}
+      - - {x: 35, y: -33}
+        - {x: 40, y: -26}
+        - {x: 50, y: -16}
+        - {x: 58, y: -9}
+        - {x: 62, y: -1}
+        - {x: 63, y: 6}
+        - {x: 62, y: 13}
+        - {x: 53, y: 22}
+        - {x: 45, y: 26}
+        - {x: 26, y: 31}
+        - {x: 1, y: 31}
+        - {x: -30, y: 29}
+        - {x: -47, y: 21}
+        - {x: -58, y: 9}
+        - {x: -66, y: 0}
+        - {x: -70, y: -16}
+        - {x: -68, y: -24}
+        - {x: -64, y: -28}
+        - {x: -57, y: -31}
+        - {x: -39, y: -37}
+        - {x: -30, y: -40}
+        - {x: -18, y: -41}
+        - {x: -8, y: -40}
+        - {x: 12, y: -36}
+        - {x: 26, y: -35}
       tessellationDetail: 0
       bones: []
-      spriteID: 3f6444dbd27a51df0800000000000000
-      internalID: -210077992712124685
+      spriteID: 9ad9aa33d395a6010800000000000000
+      internalID: 1182855971532873129
       vertices: []
       indices: 
       edges: []
@@ -135,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: da360e8e8218d4046bbcf203008a72ab
+    spriteID: 75d5ba7f98c1b59448c7e5ff4f53aeed
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +160,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      map_lake_merged_0: -210077992712124685
+      map_beach_merged_0: 1182855971532873129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

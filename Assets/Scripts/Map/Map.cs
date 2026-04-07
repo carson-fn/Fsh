@@ -7,10 +7,11 @@ public class Map : MonoBehaviour
 {
     // Ray Macros
     private const int RAY_DISTANCE = 10; // distance to camera
-    private const int BIOME_LAYER = 1 << 8; // need bitmask from int
+    private const int BIOME_LAYER = 1 << 12; // need bitmask from int
 
     // Biome Names, TODO: make this into an enum?
     private const string POND_NAME = "Pond";
+    private const string BEACH_NAME = "Beach";
     private const string ARCTIC_NAME = "Arctic";
 
     // ------------------------------------------------------
@@ -55,8 +56,15 @@ public class Map : MonoBehaviour
             case POND_NAME:
                 Debug.Log("mouse click hit pond biome, scene switching commence!");
 
-                SceneManager.LoadScene("TestStartScreen");
+                SceneManager.LoadScene("PondLevelSelect");
                 Debug.Log("scene switched to PondLevelSelect");
+                break;
+                
+            case BEACH_NAME:
+                Debug.Log("mouse click hit beach biome, scene switching commence!");
+
+                SceneManager.LoadScene("BeachLevelSelect");
+                Debug.Log("scene switched to BeachLevelSelect");
                 break;
 
             case ARCTIC_NAME:

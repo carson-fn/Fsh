@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1b4521abe29748f46b3881f54d258499
+guid: 99b434631c842b542a1ca60d5431efcc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5856316230329784871
-    second: map_lake_0
-  - first:
-      213: -87591920442221611
-    second: map_lake_1
+      213: -3795981045785018876
+    second: level_select_stone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,78 +100,44 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: map_lake_0
+      name: level_select_stone_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 100
-        width: 180
-        height: 100
+        x: 8
+        y: 17
+        width: 34
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: 18, y: -7}
+        - {x: 18, y: 5}
+        - {x: 13, y: 8}
+        - {x: -10, y: 8}
+        - {x: -18, y: 5}
+        - {x: -18, y: -5}
+        - {x: -15, y: -8}
+        - {x: 17, y: -8}
       physicsShape:
-      - - {x: 61, y: -33}
-        - {x: 63, y: -26}
-        - {x: 60, y: -19}
-        - {x: 59, y: -15}
-        - {x: 56, y: -13}
-        - {x: 52, y: -9}
-        - {x: 53, y: -6}
-        - {x: 53, y: 0}
-        - {x: 49, y: 7}
-        - {x: 46, y: 15}
-        - {x: 43, y: 18}
-        - {x: 39, y: 22}
-        - {x: 29, y: 22}
-        - {x: 24, y: 24}
-        - {x: -14, y: 24}
-        - {x: -20, y: 22}
-        - {x: -27, y: 20}
-        - {x: -37, y: 13}
-        - {x: -44, y: 7}
-        - {x: -47, y: 2}
-        - {x: -51, y: -4}
-        - {x: -62, y: -11}
-        - {x: -66, y: -17}
-        - {x: -66, y: -24}
-        - {x: -60, y: -30}
-        - {x: -48, y: -35}
-        - {x: -34, y: -37}
-        - {x: -24, y: -37}
-        - {x: -11, y: -41}
-        - {x: 14, y: -43}
-        - {x: 28, y: -42}
-        - {x: 55, y: -40}
-        - {x: 59, y: -38}
+      - - {x: 16, y: 0}
+        - {x: 15, y: 2}
+        - {x: 12, y: 4}
+        - {x: 6, y: 7}
+        - {x: -5, y: 7}
+        - {x: -11, y: 5}
+        - {x: -15, y: 2}
+        - {x: -16, y: 0}
+        - {x: -16, y: -3}
+        - {x: -13, y: -4}
+        - {x: -7, y: -6}
+        - {x: 9, y: -6}
+        - {x: 14, y: -4}
       tessellationDetail: 0
       bones: []
-      spriteID: 72a59295590d54150800000000000000
-      internalID: 5856316230329784871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: map_lake_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 180
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5dbd8d8cc9fc8cef0800000000000000
-      internalID: -87591920442221611
+      spriteID: 40e3edfc957f15bc0800000000000000
+      internalID: -3795981045785018876
       vertices: []
       indices: 
       edges: []
@@ -183,7 +146,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4fff5c61a71d13b468fe6957ff3d186d
+    spriteID: 4a0b2d77a7812b340b675f7e892a548f
     internalID: 0
     vertices: []
     indices: 
@@ -193,8 +156,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      map_lake_0: 5856316230329784871
-      map_lake_1: -87591920442221611
+      level_select_stone_0: -3795981045785018876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
