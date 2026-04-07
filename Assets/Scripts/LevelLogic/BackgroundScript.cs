@@ -4,29 +4,38 @@ using UnityEngine;
 public class BackgroundScript : MonoBehaviour
 {
 
-    private int TEST_BIOME = 1;
+    private int TEST_BIOME = 2;
 
-    public SpriteRenderer backgroundRenderer;  
+    public static SpriteRenderer backgroundRenderer;  
     [SerializeField] private Sprite biome1;
     [SerializeField] private Sprite biome2;
     [SerializeField] private Sprite biome3;
 
     [SerializeField] private static List<Sprite> backgrounds = new List<Sprite>();
 
+
     
-    private void changeBackground(Sprite newSprite)
+    private static void changeBackground(Sprite newSprite)
     {
         Debug.Log($"TRYING TO RENDER NEW BACKGROUND SPRITE!!! \n");
         backgroundRenderer.sprite = newSprite;
     }
-    public void changeBiome(int biome)
+    public static void changeBiome(int biome)
     {
-        changeBackground(backgrounds[biome]);
+        changeBackground(backgrounds[biome - 1]); // 1 - 3
     }
 
     public BackgroundScript getInstance()
     {
         return this;
+    }
+    void Awake()
+    {
+        backgroundRenderer = GetComponent<SpriteRenderer>();
+        backgrounds.Clear();
+        backgrounds.Add(biome1);
+        backgrounds.Add(biome2);
+        backgrounds.Add(biome3);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,12 +45,13 @@ public class BackgroundScript : MonoBehaviour
         backgrounds.Add(biome3);
         
         //testing loading diff backgrounds
-        changeBiome(TEST_BIOME);
+        Debug.Log($"CHANGING BACKGROUND RN for biome {LogicScript.getBiome()}\n");
+        changeBiome(LogicScript.getBiome());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //changeBiome(TEST_BIOME);
+        //changeBiome(LogicScript.getBiome());
     }
 }

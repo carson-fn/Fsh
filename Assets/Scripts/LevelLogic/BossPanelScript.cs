@@ -32,6 +32,8 @@ public class BossPanelScript : MonoBehaviour
         LeftFishSpawnerScript.setAvgSpawnRate(6);
         TrashSpawnerScript.setAvgSpawnRate(1.8f);
 
+        // FIX !!!!
+        // BossImgChanger.changeBossImage(2); // input param should be biome (1-3)
         // BossEndScreen.SetActive(false);
         // BossStartScreen.SetActive(true);
 
@@ -52,6 +54,7 @@ public class BossPanelScript : MonoBehaviour
         }
         else if (LogicScript.getDead())
         {
+            
             GameOverLogicScript.getInstance().gameOver();
         }
         
@@ -74,6 +77,7 @@ public class BossPanelScript : MonoBehaviour
     }
     public static void closeStartScreen()
     {
+
         Debug.Log($"START SCREEN: {BossStartScreen}");
         Debug.Log("CLOSING START SCREEN \n\n\n");
         BossStartScreen.SetActive(false); 

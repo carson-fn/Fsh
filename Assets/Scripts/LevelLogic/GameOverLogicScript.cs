@@ -18,7 +18,7 @@ public class GameOverLogicScript : MonoBehaviour
     private float BOSS_LVL = -1;
     private float PERCENT_1STAR = 0.6f;
     private float PERCENT_2STAR = 0.75f;
-    private float PERCENT_3STAR = 0.88f;
+    private float PERCENT_3STAR = 0.85f;
 
     private int num_stars_achieved = 0; 
 
@@ -72,8 +72,17 @@ public class GameOverLogicScript : MonoBehaviour
         CatScript.setPlayerToStart();
         GameOverScreen.SetActive(false);
         LogicScript.setScore(0);
-        LogicScript.resetTimer(60f);
-        Debug.Log("RESET THINGS AT END OF GAME !!! \n");
+        LogicScript.resetTimer(60f);     
+
+        // BossSpriteChangerScript spriteChanger = FindObjectOfType<BossSpriteChangerScript>();
+        // if (spriteChanger != null)
+        // {
+        //     spriteChanger.changeSprite(LogicScript.getBiome());
+        // }
+        //BossImgChanger.changeBossImage(LogicScript.getBiome());
+        Debug.Log($"IN RESET LVL, BIOME IS {LogicScript.getBiome()}");
+
+
     }
 
     public void goToLevel(int lvl) // mm idk abt putting this here ngl but idk 
@@ -137,21 +146,29 @@ public class GameOverLogicScript : MonoBehaviour
         finalScoreText.text = $"Score: {LogicScript.getScore()}";
         Debug.Log("SCORE DISPLAYED\n");
 
+        float acceptableDiff = (float) LogicScript.getLevel() + 1.5f;
+        float difference = TrashSpawnerScript.getTotalNumTrashSpawned() - TrashSpawnerScript.getNumTrashCollected();
         float percentTrashCollected = (float) TrashSpawnerScript.getNumTrashCollected() / TrashSpawnerScript.getTotalNumTrashSpawned();
         // try displaying the stars one at a time idk ... need to implememnt still 
         Debug.Log($"percent trash collected: {percentTrashCollected}\n");
         
-        if (percentTrashCollected >= PERCENT_3STAR)
+        if ((percentTrashCollected >= PERCENT_3STAR) || (difference <= (acceptableDiff - 1.0f)))
         {
             Debug.Log("3 STAR\n");
             num_stars_achieved = 3;
-        }
-        else if (percentTrashCollected >= PERCENT_2STAR)
+            // updating hughest lvl 
+            if (PlayerProfileManager.Instance != null)
+            {
+                int highestLvl = (LogicScript.getBiome() - 1) * 3 + LogicScript.getLevel(); // bc there r 3 lvls for each biome
+                PlayerProfileManager.Instance.UpdateHighestLevelReached(highestLvl);
+            }
+            }
+        else if ((percentTrashCollected >= PERCENT_2STAR) || (difference <= (acceptableDiff - 0.5f)))
         {
             Debug.Log("2 STAR\n");
             num_stars_achieved = 2;
         }
-        else if (percentTrashCollected >= PERCENT_1STAR)
+        else if ((percentTrashCollected >= PERCENT_1STAR) || (difference <= (acceptableDiff - 0.2f)))
         {
             Debug.Log("1 STAR\n");
             num_stars_achieved = 1;
@@ -160,6 +177,7 @@ public class GameOverLogicScript : MonoBehaviour
         displayStars();
 
         LogicScript.setStartGame(false);
+
 
     }
 
@@ -171,10 +189,5 @@ public class GameOverLogicScript : MonoBehaviour
             gameOver();
         }
         
-        // else if (LogicScript.getLevel() == BOSS_LVL && !BossPanelScript.getOpenGOScreen())
-        // {
-        //     //Debug.Log("Update - force hiding GameOverScreen on boss level"); // ADD THIS
-        //     GameOverScreen.SetActive(false);
-        // }
     }
 }
