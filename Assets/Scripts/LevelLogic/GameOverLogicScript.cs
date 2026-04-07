@@ -156,13 +156,7 @@ public class GameOverLogicScript : MonoBehaviour
         {
             Debug.Log("3 STAR\n");
             num_stars_achieved = 3;
-            // updating hughest lvl 
-            if (PlayerProfileManager.Instance != null)
-            {
-                int highestLvl = (LogicScript.getBiome() - 1) * 3 + LogicScript.getLevel(); // bc there r 3 lvls for each biome
-                PlayerProfileManager.Instance.UpdateHighestLevelReached(highestLvl);
-            }
-            }
+
         else if ((percentTrashCollected >= PERCENT_2STAR) || (difference <= (acceptableDiff - 0.5f)))
         {
             Debug.Log("2 STAR\n");
