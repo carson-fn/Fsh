@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
-    // NOTE: include LogicScript.cs
-    private LogicScript LogicScript;
+    // NOTE: include BiomeScreenLogic.cs
+    private BiomeScreenLogic BiomeScreenLogic;
 
     // -------------------------------------------------------
 
@@ -29,17 +29,17 @@ public class Map : MonoBehaviour
     // ------------------------------------------------------
     void Start()
     {
-        getLogicScript();
+        getBiomeLogicScript();
     }
 
-    private void getLogicScript()
+    private void getBiomeLogicScript()
     {
-        LogicScript = GameObject.Find("Biome Manager").GetComponent<LogicScript>(); // get script from manager game object
+        BiomeScreenLogic = GameObject.Find("Biome Manager").GetComponent<BiomeScreenLogic>(); // get script from manager game object
 
-        if (LogicScript != null)
-            Debug.Log("LogicScript found on this game object!");
+        if (BiomeScreenLogic != null)
+            Debug.Log("BiomeScreenLogic found on this game object!");
         else
-            Debug.LogWarning("LogicScript not found on this GameObject D:");
+            Debug.LogWarning("BiomeScreenLogic not found on this GameObject D:");
     }
 
     void Update()
@@ -85,7 +85,7 @@ public class Map : MonoBehaviour
                 SceneManager.LoadScene("PondLevelSelect");
                 Debug.Log("scene switched to PondLevelSelect");
 
-                LogicScript.setBiome(POND_NUM);
+                BiomeScreenLogic.setBiome(POND_NUM);
                 Debug.Log("set biome in LogicScript.cs to " + POND_NUM);
 
                 break;
@@ -96,7 +96,7 @@ public class Map : MonoBehaviour
                 SceneManager.LoadScene("BeachLevelSelect");
                 Debug.Log("scene switched to BeachLevelSelect");
 
-                LogicScript.setBiome(BEACH_NUM);
+                BiomeScreenLogic.setBiome(BEACH_NUM);
                 Debug.Log("set biome in LogicScript.cs to " + BEACH_NUM);
 
                 break;
@@ -107,7 +107,7 @@ public class Map : MonoBehaviour
                 SceneManager.LoadScene("ArcticLevelSelect");
                 Debug.Log("scene switched to ArcticLevelSelect");
 
-                LogicScript.setBiome(ARCTIC_NUM);
+                BiomeScreenLogic.setBiome(ARCTIC_NUM);
                 Debug.Log("set biome in LogicScript.cs to " + ARCTIC_NUM);
 
                 break;
