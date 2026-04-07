@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
+    // NOTE: include LogicScript.cs
+    private LogicScript LogicScript;
+
+    // -------------------------------------------------------
+
     // Ray Macros
     private const int RAY_DISTANCE = 10; // distance to camera
     private const int BIOME_LAYER = 1 << 12; // need bitmask from int
@@ -14,7 +19,27 @@ public class Map : MonoBehaviour
     private const string BEACH_NAME = "Beach";
     private const string ARCTIC_NAME = "Arctic";
 
+    // NOTE: since biomes not buttons, call setBiome() within here
+    // Biome Numbers
+    private const int POND_NUM = 1;
+    private const int BEACH_NUM = 3;
+    private const int ARCTIC_NUM = 2;
+
     // ------------------------------------------------------
+    void Start()
+    {
+        getLogicScript();
+    }
+
+    private void getLogicScript()
+    {
+        LogicScript = GetComponent<LogicScript>();
+
+        if (LogicScript != null)
+            Debug.Log("LogicScript found on this game object!");
+        else
+            Debug.LogWarning("LogicScript not found on this GameObject D:");
+    }
 
     void Update()
     {
@@ -58,6 +83,10 @@ public class Map : MonoBehaviour
 
                 SceneManager.LoadScene("PondLevelSelect");
                 Debug.Log("scene switched to PondLevelSelect");
+
+                LogicScript.setBiome(POND_NUM);
+                Debug.Log("set biome in LogicScript.cs to " + POND_NUM);
+
                 break;
                 
             case BEACH_NAME:
@@ -65,6 +94,10 @@ public class Map : MonoBehaviour
 
                 SceneManager.LoadScene("BeachLevelSelect");
                 Debug.Log("scene switched to BeachLevelSelect");
+
+                LogicScript.setBiome(BEACH_NUM);
+                Debug.Log("set biome in LogicScript.cs to " + BEACH_NUM);
+
                 break;
 
             case ARCTIC_NAME:
@@ -72,6 +105,10 @@ public class Map : MonoBehaviour
 
                 SceneManager.LoadScene("ArcticLevelSelect");
                 Debug.Log("scene switched to ArcticLevelSelect");
+
+                LogicScript.setBiome(ARCTIC_NUM);
+                Debug.Log("set biome in LogicScript.cs to " + ARCTIC_NUM);
+
                 break;
 
             default:
