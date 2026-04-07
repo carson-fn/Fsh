@@ -46,7 +46,7 @@ public class BackgroundScript : MonoBehaviour
         
         //testing loading diff backgrounds
         Debug.Log($"CHANGING BACKGROUND RN for biome {LogicScript.getBiome()}\n");
-        changeBiome(LogicScript.getBiome());
+        //changeBiome(LogicScript.getBiome()); // WE DO NOT WANT TO CHANGE BACKGROUND FOR NOW
     }
 
     // Update is called once per frame

@@ -135,10 +135,17 @@ public class GameOverLogicScript : MonoBehaviour
     public static void openGameOverScreen()
     {
         GameOverScreen.SetActive(true);
+        // remove next button if first biome
+        GameObject nextBtn = GameObject.FindGameObjectWithTag("NextButton");
+        if (LogicScript.getBiome() == 1)
+        {
+            nextBtn.SetActive(false);
+        }
     }
 
     public void gameOver()
     {
+
  
         openGameOverScreen();
 
