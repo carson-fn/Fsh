@@ -177,8 +177,12 @@ public class GameOverLogicScript : MonoBehaviour
         displayStars();
 
         LogicScript.setStartGame(false);
-
-
+        
+        int coinsEarned = (int)TrashSpawnerScript.getNumTrashCollected();
+        if (PlayerProfileManager.Instance != null)
+        {
+            PlayerProfileManager.Instance.AddCoins(coinsEarned);
+        }
     }
 
     // Update is called once per frame
