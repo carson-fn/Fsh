@@ -156,7 +156,7 @@ public class GameOverLogicScript : MonoBehaviour
         {
             Debug.Log("3 STAR\n");
             num_stars_achieved = 3;
-
+        }
         else if ((percentTrashCollected >= PERCENT_2STAR) || (difference <= (acceptableDiff - 0.5f)))
         {
             Debug.Log("2 STAR\n");
