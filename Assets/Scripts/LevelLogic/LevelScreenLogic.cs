@@ -15,7 +15,7 @@ public class LevelScreenLogic : MonoBehaviour
 
         Debug.Log($"PICKING LVL {lvl}\n\n");
         LogicScript.setLevel(lvl);
-        LogicScript.setBiome(1); // FOR TESTING 
+        LogicScript.setBiome(3); // FOR TESTING 
         if(lvl == BOSS_LVL)
         {
             SceneManager.LoadScene("Biome1BossLvl");
