@@ -32,5 +32,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestStartScreen.unity
     guid: cdbadca7d8730433fa38cd32309e6f48
+  - enabled: 1
+    path: Assets/Scenes/Level Select/BeachLevelSelect.unity
+    guid: c35f60af496838848a23b59ef3f91944
+  - enabled: 1
+    path: Assets/Scenes/Level Select/ArcticLevelSelect.unity
+    guid: 6f41271aa712adb47a365dee274792eb
+  - enabled: 1
+    path: Assets/Scenes/Level Select/PondLevelSelect.unity
+    guid: 18f1a89c05544784986b7dfaeea80c51
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

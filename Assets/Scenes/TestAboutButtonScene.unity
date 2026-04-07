@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fsh is a 2D fishing game inspired by the United Nations Survival Development
+  m_text: "Fsh is a 2D fishing game inspired by the United Nations Sustainable Development
     Goal #14 - Life Below Water. We made this game to raise awareness about the marine
     ecosystem and what we can do to reduce pollution. \n\nThe goals of the game are:\n-
     Try to protect marine life by clearing garbage\n- Clear enough garbage before
