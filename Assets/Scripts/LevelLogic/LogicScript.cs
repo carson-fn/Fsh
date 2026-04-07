@@ -1,11 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using UnityEditorInternal;
-using System.Data;
 
 enum BIOME {
     BIOME1 = 1,

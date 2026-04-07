@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ public static class Database
     public static Task<Client> GetClientAsync()
     {
         production = true; // Set this to false to use local env vars for development
-        
+
         if (supabase != null) return Task.FromResult(supabase);
 
         if (initializer != null) return initializer;

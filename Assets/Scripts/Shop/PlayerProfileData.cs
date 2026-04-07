@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Rendering;
 
 [Serializable]
 public class PlayerProfileData
