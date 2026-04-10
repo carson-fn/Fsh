@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: aeca99184a290a54a813153904df08f4
+guid: f11717a291a3c4adb9f13f15bc3ed391
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7436308273948505147
-    second: map_pond_0
-  - first:
-      213: -3690594204951815769
-    second: map_pond_1
+      213: -8781757214100938709
+    second: crab_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,73 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: map_pond_0
+      name: crab_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 100
-        width: 180
-        height: 100
+        x: 85
+        y: 130
+        width: 330
+        height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 29, y: -15}
-        - {x: 40, y: -12}
-        - {x: 50, y: -9}
-        - {x: 59, y: -3}
-        - {x: 58, y: 4}
-        - {x: 52, y: 10}
-        - {x: 40, y: 16}
-        - {x: 24, y: 20}
-        - {x: 7, y: 22}
-        - {x: -3, y: 23}
-        - {x: -10, y: 24}
-        - {x: -28, y: 22}
-        - {x: -36, y: 19}
-        - {x: -45, y: 16}
-        - {x: -57, y: 10}
-        - {x: -59, y: 7}
-        - {x: -61, y: 5}
-        - {x: -61, y: -3}
-        - {x: -65, y: -13}
-        - {x: -66, y: -16}
-        - {x: -63, y: -22}
-        - {x: -53, y: -27}
-        - {x: -38, y: -30}
-        - {x: -17, y: -31}
-        - {x: 3, y: -31}
-        - {x: 13, y: -29}
-        - {x: 18, y: -25}
-        - {x: 21, y: -21}
-      tessellationDetail: 0
-      bones: []
-      spriteID: b34bff4d9f2133760800000000000000
-      internalID: 7436308273948505147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: map_pond_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 180
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7a95bbbcf1068ccc0800000000000000
-      internalID: -3690594204951815769
+      spriteID: b202acd675ee02680800000000000000
+      internalID: -8781757214100938709
       vertices: []
       indices: 
       edges: []
@@ -178,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c36d7eccdd1dd5644b9a98226e494eef
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      map_pond_0: 7436308273948505147
-      map_pond_1: -3690594204951815769
+      crab_0: -8781757214100938709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

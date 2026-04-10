@@ -3,24 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
-  - Fish
   - CatPlayer
-  - Magnet
-  - Trash
   - GameOverScreen
-  - FinalScoreText
-  - NextButton
   - Star1
+  - FinalScoreText
+  - BossStartPanel
+  - PlayAgainImage
+  - Magnet
+  - BossEndPanel
   - Star2
   - Star3
   - BossStartPanel
   - BossEndPanel
   - PlayAgainImage
->>>>>>> origin/dev
+  - Trash
+  - Fish
+  - NextButton
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -32,16 +32,9 @@ TagManager:
   - Title
   - Sprites
   - 
-<<<<<<< HEAD
   - Buttons
-=======
   - Background
   - Map Biome
-  - 
-  - 
->>>>>>> origin/dev
-  - 
-  - 
   - 
   - 
   - 
@@ -64,6 +57,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map Biome
+    uniqueID: 1194907539
     locked: 0
   m_RenderingLayers:
   - Default

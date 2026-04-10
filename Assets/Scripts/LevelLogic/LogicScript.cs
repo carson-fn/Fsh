@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using UnityEditorInternal;
-using System.Data;
+
+enum BIOME {
+    BIOME1 = 1,
+    BIOME2,
+    BIOME3
+}
 
 enum LEVELS {
     LEVEL0 = 0,
@@ -16,7 +16,8 @@ enum LEVELS {
 }
 public class LogicScript : MonoBehaviour
 {
-    private static int level;
+    private static int level = 1;
+    private static int biome = 2; // for now;
     private static float elapsedTime;
     [SerializeField] private static float startTimeSeconds = 60f;
     private static float timeLeftSeconds = 60f;
@@ -47,6 +48,17 @@ public class LogicScript : MonoBehaviour
     public static void setScore(int s)
     {
         score = s;
+    }
+
+    public static void setBiome(int b)
+    {
+        biome = b;
+        //BossImgChanger.changeBossImage(biome);
+        //BackgroundScript.changeBiome(biome);
+    }
+    public static int getBiome()
+    {
+        return biome;
     }
 
     public static void setTime( int seconds)
@@ -126,7 +138,6 @@ public class LogicScript : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timeLeftSeconds / 60);
         int seconds = Mathf.FloorToInt(timeLeftSeconds % 60);
-        //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         timerText.text = $"{minutes}:{seconds:00}";
         
     }
@@ -142,14 +153,6 @@ public class LogicScript : MonoBehaviour
                 countdownTimer();
             }
         }
-        // else
-        // {
-        //     GameOverLogicInstance.gameOver();
-        //     // display game over scene ?? 
-        //     Debug.Log("GAME OVER\n");
-        // }
-        
 
-        
     }
 }

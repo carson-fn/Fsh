@@ -13,12 +13,13 @@ public class LevelScreenLogic : MonoBehaviour
     public void goToLevel(int lvl)
     {
 
-        Debug.Log($"STRAWBERRY PICKING LVL {lvl}\n\n");
         Debug.Log($"PICKING LVL {lvl}\n\n");
         LogicScript.setLevel(lvl);
+        //LogicScript.setBiome(1); // FOR TESTING 
         if(lvl == BOSS_LVL)
         {
-            SceneManager.LoadScene("Biome1BossLvl");
+            SceneManager.LoadScene("Biome1BossLvl");            
+            
         }
         else
         {

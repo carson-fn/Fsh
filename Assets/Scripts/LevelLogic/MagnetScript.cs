@@ -147,7 +147,7 @@ public class MagnetScript : MonoBehaviour
 
         if (returnStart)
         {
-            ReturnToStart();
+            returnToStart();
         }
 
         myRigidBody.linearVelocity = movementDirection * movementSpeed;
@@ -173,7 +173,7 @@ public class MagnetScript : MonoBehaviour
             LogicScript.decreaseTime(10);
 
             returnStart = true;
-            ReturnToStart();
+            returnToStart();
 
             float timeLeft = LogicScript.getTimeLeftSeconds();
             if (timeLeft <= 10f)
@@ -192,8 +192,13 @@ public class MagnetScript : MonoBehaviour
         }
     }
 
-    private void ReturnToStart()
+    private void returnToStart()
     {
-        GameObject catPlayer = GameObject.FindGameObjectWithTag("CatPlayer");
+        float PlayerPositionX = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.x;
+        float PlayerPositionY = GameObject.FindGameObjectWithTag("CatPlayer").transform.position.y;
+        //Debug.Log(" GOT PLAYER POSITION\n");
+        movementDirection = new Vector2((PlayerPositionX + localStartPositionX - transform.position.x)/movementSpeed, 
+        (PlayerPositionY + localStartPositionY - transform.position.y)/movementSpeed);
+
     }
 }

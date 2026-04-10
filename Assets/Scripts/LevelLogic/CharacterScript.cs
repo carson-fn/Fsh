@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -9,8 +6,8 @@ public class CharacterScript : MonoBehaviour
     public Rigidbody2D myRigidBody;
     private Vector2 movementDirection;
 
-    [SerializeField] private static float leftOutOfBoundX = -9.5f;
-    [SerializeField] private static float rightOutOfBoundX = 13f;
+    [SerializeField] private static float leftOutOfBoundX = -11.0f;
+    [SerializeField] private static float rightOutOfBoundX = 13.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
